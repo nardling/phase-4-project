@@ -1,2 +1,3 @@
 class UserFollower < ApplicationRecord
+    
 end
