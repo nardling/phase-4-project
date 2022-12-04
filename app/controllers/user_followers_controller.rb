@@ -1,0 +1,2 @@
+class UserFollowersController < ApplicationController
+end
