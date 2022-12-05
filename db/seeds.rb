@@ -68,9 +68,12 @@ uid0 = User.first.id
 uidn = User.last.id
 
 for u in uid0..uidn do
-    f = rand(r) + u0.id
-    while f == u do
+    count = rand(4)
+    for i in 1..count do
         f = rand(r) + u0.id
+        while f == u do
+            f = rand(r) + u0.id
+        end
+        uf = UserFollower.create!(userId: u, followerId: f)
     end
-    uf = UserFollower.create!(userId: u, followerId: f)
 end
