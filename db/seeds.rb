@@ -9,6 +9,7 @@
 require 'faker'
 User.destroy_all
 Post.destroy_all
+UserFollower.destroy_all
 
 User.create!([
     {
@@ -60,4 +61,16 @@ for a in 1..30 do
         n = rand(r) + u0.id
         Post.create!(user: User.find_by(id: n), parentPostId: p.id, rootPostId: p.id, commentPermissions: rand(3), text: Faker::Company.catch_phrase)
     end
+end
+
+# everyone gets two followers
+uid0 = User.first.id
+uidn = User.last.id
+
+for u in uid0..uidn do
+    f = rand(r) + u0.id
+    while f == u do
+        f = rand(r) + u0.id
+    end
+    uf = UserFollower.create!(userId: u, followerId: f)
 end

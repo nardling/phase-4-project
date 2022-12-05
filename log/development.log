@@ -795,3 +795,921 @@ Migrating to CreatePosts (20221202194726)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Phased local support"], ["user_id", 14], ["created_at", "2022-12-04 19:20:06.830724"], ["updated_at", "2022-12-04 19:20:06.830724"]]
   [1m[36mTRANSACTION (117.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "13"], ["followerId", "22"], ["created_at", "2022-12-04 19:58:49.099329"], ["updated_at", "2022-12-04 19:58:49.099329"]]
+  [1m[36mTRANSACTION (105.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "14"], ["followerId", "16"], ["created_at", "2022-12-04 19:58:49.212129"], ["updated_at", "2022-12-04 19:58:49.212129"]]
+  [1m[36mTRANSACTION (98.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "15"], ["followerId", "17"], ["created_at", "2022-12-04 19:58:49.321898"], ["updated_at", "2022-12-04 19:58:49.321898"]]
+  [1m[36mTRANSACTION (90.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "16"], ["followerId", "20"], ["created_at", "2022-12-04 19:58:49.420542"], ["updated_at", "2022-12-04 19:58:49.420542"]]
+  [1m[36mTRANSACTION (95.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "17"], ["followerId", "19"], ["created_at", "2022-12-04 19:58:49.521856"], ["updated_at", "2022-12-04 19:58:49.521856"]]
+  [1m[36mTRANSACTION (102.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "18"], ["followerId", "21"], ["created_at", "2022-12-04 19:58:49.632879"], ["updated_at", "2022-12-04 19:58:49.632879"]]
+  [1m[36mTRANSACTION (79.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "19"], ["followerId", "14"], ["created_at", "2022-12-04 19:58:49.720456"], ["updated_at", "2022-12-04 19:58:49.720456"]]
+  [1m[36mTRANSACTION (95.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "20"], ["followerId", "19"], ["created_at", "2022-12-04 19:58:49.821758"], ["updated_at", "2022-12-04 19:58:49.821758"]]
+  [1m[36mTRANSACTION (102.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.9ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "21"], ["followerId", "18"], ["created_at", "2022-12-04 19:58:49.933333"], ["updated_at", "2022-12-04 19:58:49.933333"]]
+  [1m[36mTRANSACTION (97.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "22"], ["followerId", "14"], ["created_at", "2022-12-04 19:58:50.044075"], ["updated_at", "2022-12-04 19:58:50.044075"]]
+  [1m[36mTRANSACTION (101.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "23"], ["followerId", "17"], ["created_at", "2022-12-04 19:58:50.155234"], ["updated_at", "2022-12-04 19:58:50.155234"]]
+  [1m[36mTRANSACTION (90.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "24"], ["followerId", "13"], ["created_at", "2022-12-04 19:58:50.255052"], ["updated_at", "2022-12-04 19:58:50.255052"]]
+  [1m[36mTRANSACTION (102.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "13"], ["followerId", "20"], ["created_at", "2022-12-04 20:03:50.445445"], ["updated_at", "2022-12-04 20:03:50.445445"]]
+  [1m[36mTRANSACTION (153.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "14"], ["followerId", "13"], ["created_at", "2022-12-04 20:03:50.605763"], ["updated_at", "2022-12-04 20:03:50.605763"]]
+  [1m[36mTRANSACTION (90.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "15"], ["followerId", "13"], ["created_at", "2022-12-04 20:03:50.705635"], ["updated_at", "2022-12-04 20:03:50.705635"]]
+  [1m[36mTRANSACTION (90.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "16"], ["followerId", "23"], ["created_at", "2022-12-04 20:03:50.805797"], ["updated_at", "2022-12-04 20:03:50.805797"]]
+  [1m[36mTRANSACTION (90.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "17"], ["followerId", "14"], ["created_at", "2022-12-04 20:03:50.905704"], ["updated_at", "2022-12-04 20:03:50.905704"]]
+  [1m[36mTRANSACTION (113.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.9ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "18"], ["followerId", "17"], ["created_at", "2022-12-04 20:03:51.029433"], ["updated_at", "2022-12-04 20:03:51.029433"]]
+  [1m[36mTRANSACTION (96.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "19"], ["followerId", "23"], ["created_at", "2022-12-04 20:03:51.137153"], ["updated_at", "2022-12-04 20:03:51.137153"]]
+  [1m[36mTRANSACTION (86.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (1.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "20"], ["followerId", "18"], ["created_at", "2022-12-04 20:03:51.229602"], ["updated_at", "2022-12-04 20:03:51.229602"]]
+  [1m[36mTRANSACTION (86.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "21"], ["followerId", "23"], ["created_at", "2022-12-04 20:03:51.328275"], ["updated_at", "2022-12-04 20:03:51.328275"]]
+  [1m[36mTRANSACTION (101.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.7ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "22"], ["followerId", "18"], ["created_at", "2022-12-04 20:03:51.438886"], ["updated_at", "2022-12-04 20:03:51.438886"]]
+  [1m[36mTRANSACTION (91.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.9ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "23"], ["followerId", "19"], ["created_at", "2022-12-04 20:03:51.538908"], ["updated_at", "2022-12-04 20:03:51.538908"]]
+  [1m[36mTRANSACTION (110.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "24"], ["followerId", "20"], ["created_at", "2022-12-04 20:03:51.661167"], ["updated_at", "2022-12-04 20:03:51.661167"]]
+  [1m[36mTRANSACTION (89.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "13"], ["followerId", "21"], ["created_at", "2022-12-04 20:04:40.976709"], ["updated_at", "2022-12-04 20:04:40.976709"]]
+  [1m[36mTRANSACTION (110.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.6ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "14"], ["followerId", "15"], ["created_at", "2022-12-04 20:04:41.094734"], ["updated_at", "2022-12-04 20:04:41.094734"]]
+  [1m[36mTRANSACTION (93.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "15"], ["followerId", "14"], ["created_at", "2022-12-04 20:04:41.193809"], ["updated_at", "2022-12-04 20:04:41.193809"]]
+  [1m[36mTRANSACTION (140.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (1.0ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "16"], ["followerId", "20"], ["created_at", "2022-12-04 20:04:41.340286"], ["updated_at", "2022-12-04 20:04:41.340286"]]
+  [1m[36mTRANSACTION (100.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "17"], ["followerId", "14"], ["created_at", "2022-12-04 20:04:41.450470"], ["updated_at", "2022-12-04 20:04:41.450470"]]
+  [1m[36mTRANSACTION (94.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "18"], ["followerId", "21"], ["created_at", "2022-12-04 20:04:41.549729"], ["updated_at", "2022-12-04 20:04:41.549729"]]
+  [1m[36mTRANSACTION (95.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "19"], ["followerId", "17"], ["created_at", "2022-12-04 20:04:41.649862"], ["updated_at", "2022-12-04 20:04:41.649862"]]
+  [1m[36mTRANSACTION (118.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "20"], ["followerId", "17"], ["created_at", "2022-12-04 20:04:41.772249"], ["updated_at", "2022-12-04 20:04:41.772249"]]
+  [1m[36mTRANSACTION (84.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "21"], ["followerId", "19"], ["created_at", "2022-12-04 20:04:41.861517"], ["updated_at", "2022-12-04 20:04:41.861517"]]
+  [1m[36mTRANSACTION (93.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (1.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "22"], ["followerId", "16"], ["created_at", "2022-12-04 20:04:41.961981"], ["updated_at", "2022-12-04 20:04:41.961981"]]
+  [1m[36mTRANSACTION (103.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "23"], ["followerId", "22"], ["created_at", "2022-12-04 20:04:42.072248"], ["updated_at", "2022-12-04 20:04:42.072248"]]
+  [1m[36mTRANSACTION (95.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "24"], ["followerId", "19"], ["created_at", "2022-12-04 20:04:42.172028"], ["updated_at", "2022-12-04 20:04:42.172028"]]
+  [1m[36mTRANSACTION (83.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "13"], ["followerId", "23"], ["created_at", "2022-12-04 20:05:06.871590"], ["updated_at", "2022-12-04 20:05:06.871590"]]
+  [1m[36mTRANSACTION (373.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (1.0ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "14"], ["followerId", "17"], ["created_at", "2022-12-04 20:05:07.252034"], ["updated_at", "2022-12-04 20:05:07.252034"]]
+  [1m[36mTRANSACTION (87.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.9ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "15"], ["followerId", "20"], ["created_at", "2022-12-04 20:05:07.354157"], ["updated_at", "2022-12-04 20:05:07.354157"]]
+  [1m[36mTRANSACTION (87.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "16"], ["followerId", "15"], ["created_at", "2022-12-04 20:05:07.461458"], ["updated_at", "2022-12-04 20:05:07.461458"]]
+  [1m[36mTRANSACTION (94.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "17"], ["followerId", "13"], ["created_at", "2022-12-04 20:05:07.561461"], ["updated_at", "2022-12-04 20:05:07.561461"]]
+  [1m[36mTRANSACTION (106.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "18"], ["followerId", "17"], ["created_at", "2022-12-04 20:05:07.672629"], ["updated_at", "2022-12-04 20:05:07.672629"]]
+  [1m[36mTRANSACTION (90.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "19"], ["followerId", "14"], ["created_at", "2022-12-04 20:05:07.772602"], ["updated_at", "2022-12-04 20:05:07.772602"]]
+  [1m[36mTRANSACTION (83.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "20"], ["followerId", "23"], ["created_at", "2022-12-04 20:05:07.861557"], ["updated_at", "2022-12-04 20:05:07.861557"]]
+  [1m[36mTRANSACTION (84.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "21"], ["followerId", "18"], ["created_at", "2022-12-04 20:05:07.950551"], ["updated_at", "2022-12-04 20:05:07.950551"]]
+  [1m[36mTRANSACTION (93.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "22"], ["followerId", "17"], ["created_at", "2022-12-04 20:05:08.050573"], ["updated_at", "2022-12-04 20:05:08.050573"]]
+  [1m[36mTRANSACTION (84.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "23"], ["followerId", "19"], ["created_at", "2022-12-04 20:05:08.138870"], ["updated_at", "2022-12-04 20:05:08.138870"]]
+  [1m[36mTRANSACTION (106.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.5ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "24"], ["followerId", "14"], ["created_at", "2022-12-04 20:05:08.250265"], ["updated_at", "2022-12-04 20:05:08.250265"]]
+  [1m[36mTRANSACTION (83.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "13"], ["followerId", "22"], ["created_at", "2022-12-04 20:05:27.389016"], ["updated_at", "2022-12-04 20:05:27.389016"]]
+  [1m[36mTRANSACTION (89.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "14"], ["followerId", "17"], ["created_at", "2022-12-04 20:05:27.483776"], ["updated_at", "2022-12-04 20:05:27.483776"]]
+  [1m[36mTRANSACTION (85.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "15"], ["followerId", "19"], ["created_at", "2022-12-04 20:05:27.572893"], ["updated_at", "2022-12-04 20:05:27.572893"]]
+  [1m[36mTRANSACTION (84.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "16"], ["followerId", "18"], ["created_at", "2022-12-04 20:05:27.661690"], ["updated_at", "2022-12-04 20:05:27.661690"]]
+  [1m[36mTRANSACTION (95.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.5ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "17"], ["followerId", "13"], ["created_at", "2022-12-04 20:05:27.762075"], ["updated_at", "2022-12-04 20:05:27.762075"]]
+  [1m[36mTRANSACTION (83.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "18"], ["followerId", "17"], ["created_at", "2022-12-04 20:05:27.850873"], ["updated_at", "2022-12-04 20:05:27.850873"]]
+  [1m[36mTRANSACTION (82.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "19"], ["followerId", "22"], ["created_at", "2022-12-04 20:05:27.940275"], ["updated_at", "2022-12-04 20:05:27.940275"]]
+  [1m[36mTRANSACTION (94.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.2ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "20"], ["followerId", "14"], ["created_at", "2022-12-04 20:05:28.039630"], ["updated_at", "2022-12-04 20:05:28.039630"]]
+  [1m[36mTRANSACTION (85.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "21"], ["followerId", "16"], ["created_at", "2022-12-04 20:05:28.128264"], ["updated_at", "2022-12-04 20:05:28.128264"]]
+  [1m[36mTRANSACTION (84.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "22"], ["followerId", "16"], ["created_at", "2022-12-04 20:05:28.217757"], ["updated_at", "2022-12-04 20:05:28.217757"]]
+  [1m[36mTRANSACTION (94.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "23"], ["followerId", "14"], ["created_at", "2022-12-04 20:05:28.317685"], ["updated_at", "2022-12-04 20:05:28.317685"]]
+  [1m[36mTRANSACTION (83.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "24"], ["followerId", "13"], ["created_at", "2022-12-04 20:05:28.406068"], ["updated_at", "2022-12-04 20:05:28.406068"]]
+  [1m[36mTRANSACTION (94.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "14"], ["followerId", "17"], ["created_at", "2022-12-04 20:09:30.101235"], ["updated_at", "2022-12-04 20:09:30.101235"]]
+  [1m[36mTRANSACTION (128.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "13"], ["followerId", "23"], ["created_at", "2022-12-04 20:09:43.487873"], ["updated_at", "2022-12-04 20:09:43.487873"]]
+  [1m[36mTRANSACTION (158.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.9ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "14"], ["followerId", "22"], ["created_at", "2022-12-04 20:09:43.652923"], ["updated_at", "2022-12-04 20:09:43.652923"]]
+  [1m[36mTRANSACTION (130.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "15"], ["followerId", "22"], ["created_at", "2022-12-04 20:09:43.794228"], ["updated_at", "2022-12-04 20:09:43.794228"]]
+  [1m[36mTRANSACTION (128.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "16"], ["followerId", "17"], ["created_at", "2022-12-04 20:09:43.927270"], ["updated_at", "2022-12-04 20:09:43.927270"]]
+  [1m[36mTRANSACTION (130.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "17"], ["followerId", "15"], ["created_at", "2022-12-04 20:09:44.062302"], ["updated_at", "2022-12-04 20:09:44.062302"]]
+  [1m[36mTRANSACTION (134.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "18"], ["followerId", "20"], ["created_at", "2022-12-04 20:09:44.206183"], ["updated_at", "2022-12-04 20:09:44.206183"]]
+  [1m[36mTRANSACTION (150.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "19"], ["followerId", "17"], ["created_at", "2022-12-04 20:09:44.360624"], ["updated_at", "2022-12-04 20:09:44.360624"]]
+  [1m[36mTRANSACTION (129.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "20"], ["followerId", "21"], ["created_at", "2022-12-04 20:09:44.494154"], ["updated_at", "2022-12-04 20:09:44.494154"]]
+  [1m[36mTRANSACTION (129.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "21"], ["followerId", "22"], ["created_at", "2022-12-04 20:09:44.627910"], ["updated_at", "2022-12-04 20:09:44.627910"]]
+  [1m[36mTRANSACTION (128.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "22"], ["followerId", "16"], ["created_at", "2022-12-04 20:09:44.761870"], ["updated_at", "2022-12-04 20:09:44.761870"]]
+  [1m[36mTRANSACTION (149.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "23"], ["followerId", "17"], ["created_at", "2022-12-04 20:09:44.916731"], ["updated_at", "2022-12-04 20:09:44.916731"]]
+  [1m[36mTRANSACTION (127.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "24"], ["followerId", "23"], ["created_at", "2022-12-04 20:09:45.050056"], ["updated_at", "2022-12-04 20:09:45.050056"]]
+  [1m[36mTRANSACTION (161.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (121.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (114.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (114.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (92.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 17]]
+  [1m[36mTRANSACTION (102.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 18]]
+  [1m[36mTRANSACTION (106.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 19]]
+  [1m[36mTRANSACTION (92.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 20]]
+  [1m[36mTRANSACTION (107.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 21]]
+  [1m[36mTRANSACTION (92.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  [1m[36mTRANSACTION (92.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 23]]
+  [1m[36mTRANSACTION (87.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 24]]
+  [1m[36mTRANSACTION (86.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (98.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (103.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (100.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (113.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (1.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (119.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (1.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (89.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (86.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (91.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (1.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (103.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (226.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (92.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (114.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (426.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (147.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (104.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (103.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 17]]
+  [1m[36mTRANSACTION (92.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 18]]
+  [1m[36mTRANSACTION (122.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 19]]
+  [1m[36mTRANSACTION (93.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 20]]
+  [1m[36mTRANSACTION (92.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 21]]
+  [1m[36mTRANSACTION (92.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 22]]
+  [1m[36mTRANSACTION (114.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 23]]
+  [1m[36mTRANSACTION (112.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 24]]
+  [1m[36mTRANSACTION (111.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 25]]
+  [1m[36mTRANSACTION (96.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 26]]
+  [1m[36mTRANSACTION (92.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 27]]
+  [1m[36mTRANSACTION (92.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 28]]
+  [1m[36mTRANSACTION (93.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 29]]
+  [1m[36mTRANSACTION (135.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 30]]
+  [1m[36mTRANSACTION (91.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 31]]
+  [1m[36mTRANSACTION (91.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 32]]
+  [1m[36mTRANSACTION (115.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 33]]
+  [1m[36mTRANSACTION (115.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 34]]
+  [1m[36mTRANSACTION (90.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 35]]
+  [1m[36mTRANSACTION (93.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 36]]
+  [1m[36mTRANSACTION (90.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 37]]
+  [1m[36mTRANSACTION (92.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 38]]
+  [1m[36mTRANSACTION (91.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 39]]
+  [1m[36mTRANSACTION (81.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 40]]
+  [1m[36mTRANSACTION (79.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 41]]
+  [1m[36mTRANSACTION (92.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 42]]
+  [1m[36mTRANSACTION (103.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 43]]
+  [1m[36mTRANSACTION (92.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 44]]
+  [1m[36mTRANSACTION (90.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 45]]
+  [1m[36mTRANSACTION (93.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 46]]
+  [1m[36mTRANSACTION (113.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 47]]
+  [1m[36mTRANSACTION (93.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserFollower Load (1.2ms)[0m  [1m[34mSELECT "user_followers".* FROM "user_followers"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (105.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (114.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (120.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (110.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (115.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (114.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (113.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (136.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (113.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (113.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (103.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (111.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (103.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (103.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (101.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (104.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 17]]
+  [1m[36mTRANSACTION (113.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 18]]
+  [1m[36mTRANSACTION (113.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 19]]
+  [1m[36mTRANSACTION (112.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 20]]
+  [1m[36mTRANSACTION (113.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 21]]
+  [1m[36mTRANSACTION (113.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 22]]
+  [1m[36mTRANSACTION (114.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 23]]
+  [1m[36mTRANSACTION (132.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 24]]
+  [1m[36mTRANSACTION (109.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 25]]
+  [1m[36mTRANSACTION (113.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 26]]
+  [1m[36mTRANSACTION (108.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 27]]
+  [1m[36mTRANSACTION (106.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.2ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 28]]
+  [1m[36mTRANSACTION (119.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.0ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 29]]
+  [1m[36mTRANSACTION (110.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 30]]
+  [1m[36mTRANSACTION (110.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.2ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 31]]
+  [1m[36mTRANSACTION (110.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 32]]
+  [1m[36mTRANSACTION (114.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 33]]
+  [1m[36mTRANSACTION (98.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.1ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 34]]
+  [1m[36mTRANSACTION (99.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.2ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 35]]
+  [1m[36mTRANSACTION (108.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 36]]
+  [1m[36mTRANSACTION (103.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 37]]
+  [1m[36mTRANSACTION (113.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 38]]
+  [1m[36mTRANSACTION (105.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 39]]
+  [1m[36mTRANSACTION (108.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 40]]
+  [1m[36mTRANSACTION (104.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.0ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 41]]
+  [1m[36mTRANSACTION (93.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.1ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 42]]
+  [1m[36mTRANSACTION (131.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 43]]
+  [1m[36mTRANSACTION (109.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.1ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 44]]
+  [1m[36mTRANSACTION (284.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 45]]
+  [1m[36mTRANSACTION (91.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 46]]
+  [1m[36mTRANSACTION (89.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 47]]
+  [1m[36mTRANSACTION (92.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.1ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 48]]
+  [1m[36mTRANSACTION (188.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 49]]
+  [1m[36mTRANSACTION (172.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (2.2ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 50]]
+  [1m[36mTRANSACTION (116.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 51]]
+  [1m[36mTRANSACTION (92.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 52]]
+  [1m[36mTRANSACTION (89.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 53]]
+  [1m[36mTRANSACTION (91.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 54]]
+  [1m[36mTRANSACTION (92.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 55]]
+  [1m[36mTRANSACTION (92.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 56]]
+  [1m[36mTRANSACTION (104.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 57]]
+  [1m[36mTRANSACTION (89.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 58]]
+  [1m[36mTRANSACTION (76.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.0ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 59]]
+  [1m[36mTRANSACTION (100.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 60]]
+  [1m[36mTRANSACTION (83.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 61]]
+  [1m[36mTRANSACTION (116.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 62]]
+  [1m[36mTRANSACTION (116.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 63]]
+  [1m[36mTRANSACTION (117.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 64]]
+  [1m[36mTRANSACTION (117.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 65]]
+  [1m[36mTRANSACTION (90.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.7ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 66]]
+  [1m[36mTRANSACTION (91.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 67]]
+  [1m[36mTRANSACTION (87.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.0ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 68]]
+  [1m[36mTRANSACTION (110.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.4ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 69]]
+  [1m[36mTRANSACTION (108.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.8ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 70]]
+  [1m[36mTRANSACTION (94.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 71]]
+  [1m[36mTRANSACTION (85.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.1ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 72]]
+  [1m[36mTRANSACTION (85.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (1.3ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 73]]
+  [1m[36mTRANSACTION (94.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Johnson Carroll I"], ["handle", "LKM"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:36.623698"], ["updated_at", "2022-12-04 20:11:36.623698"]]
+  [1m[36mTRANSACTION (119.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Gayle Rodriguez"], ["handle", "HQM"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:36.747527"], ["updated_at", "2022-12-04 20:11:36.747527"]]
+  [1m[36mTRANSACTION (170.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Otelia Gusikowski"], ["handle", "EUH"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:36.925710"], ["updated_at", "2022-12-04 20:11:36.925710"]]
+  [1m[36mTRANSACTION (92.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Benny Conroy DDS"], ["handle", "UFI"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.026123"], ["updated_at", "2022-12-04 20:11:37.026123"]]
+  [1m[36mTRANSACTION (102.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Christeen Wiegand"], ["handle", "CQP"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.135629"], ["updated_at", "2022-12-04 20:11:37.135629"]]
+  [1m[36mTRANSACTION (119.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Stacy Volkman"], ["handle", "LKA"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.259893"], ["updated_at", "2022-12-04 20:11:37.259893"]]
+  [1m[36mTRANSACTION (100.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Vito Turcotte"], ["handle", "EVO"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.372434"], ["updated_at", "2022-12-04 20:11:37.372434"]]
+  [1m[36mTRANSACTION (120.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Joaquin Goodwin"], ["handle", "WAC"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.504409"], ["updated_at", "2022-12-04 20:11:37.504409"]]
+  [1m[36mTRANSACTION (79.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lenora Breitenberg DO"], ["handle", "OPN"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.593706"], ["updated_at", "2022-12-04 20:11:37.593706"]]
+  [1m[36mTRANSACTION (89.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Msgr. Merrill Mohr"], ["handle", "EFI"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.693294"], ["updated_at", "2022-12-04 20:11:37.693294"]]
+  [1m[36mTRANSACTION (90.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Marquetta Cormier"], ["handle", "TWJ"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.793495"], ["updated_at", "2022-12-04 20:11:37.793495"]]
+  [1m[36mTRANSACTION (88.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Marna Abshire DDS"], ["handle", "ZDA"], ["password", "[FILTERED]"], ["created_at", "2022-12-04 20:11:37.892952"], ["updated_at", "2022-12-04 20:11:37.892952"]]
+  [1m[36mTRANSACTION (91.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Exclusive client-server groupware"], ["user_id", 33], ["created_at", "2022-12-04 20:11:38.016568"], ["updated_at", "2022-12-04 20:11:38.016568"]]
+  [1m[36mTRANSACTION (89.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "48"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Profit-focused zero tolerance monitoring"], ["user_id", 35], ["created_at", "2022-12-04 20:11:38.119491"], ["updated_at", "2022-12-04 20:11:38.119491"]]
+  [1m[36mTRANSACTION (83.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Team-oriented eco-centric interface"], ["user_id", 31], ["created_at", "2022-12-04 20:11:38.222884"], ["updated_at", "2022-12-04 20:11:38.222884"]]
+  [1m[36mTRANSACTION (112.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "50"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Organic mobile collaboration"], ["user_id", 25], ["created_at", "2022-12-04 20:11:38.351944"], ["updated_at", "2022-12-04 20:11:38.351944"]]
+  [1m[36mTRANSACTION (87.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Persevering static emulation"], ["user_id", 26], ["created_at", "2022-12-04 20:11:38.451917"], ["updated_at", "2022-12-04 20:11:38.451917"]]
+  [1m[36mTRANSACTION (92.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Fundamental modular internet solution"], ["user_id", 29], ["created_at", "2022-12-04 20:11:38.560906"], ["updated_at", "2022-12-04 20:11:38.560906"]]
+  [1m[36mTRANSACTION (91.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Adaptive zero defect infrastructure"], ["user_id", 35], ["created_at", "2022-12-04 20:11:38.667081"], ["updated_at", "2022-12-04 20:11:38.667081"]]
+  [1m[36mTRANSACTION (83.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Innovative tangible architecture"], ["user_id", 30], ["created_at", "2022-12-04 20:11:38.767250"], ["updated_at", "2022-12-04 20:11:38.767250"]]
+  [1m[36mTRANSACTION (91.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "55"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Networked value-added adapter"], ["user_id", 31], ["created_at", "2022-12-04 20:11:38.874970"], ["updated_at", "2022-12-04 20:11:38.874970"]]
+  [1m[36mTRANSACTION (105.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Pre-emptive clear-thinking protocol"], ["user_id", 26], ["created_at", "2022-12-04 20:11:38.997480"], ["updated_at", "2022-12-04 20:11:38.997480"]]
+  [1m[36mTRANSACTION (106.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "57"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Universal exuding application"], ["user_id", 31], ["created_at", "2022-12-04 20:11:39.116743"], ["updated_at", "2022-12-04 20:11:39.116743"]]
+  [1m[36mTRANSACTION (113.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Open-architected national intranet"], ["user_id", 33], ["created_at", "2022-12-04 20:11:39.240728"], ["updated_at", "2022-12-04 20:11:39.240728"]]
+  [1m[36mTRANSACTION (76.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "59"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Sharable didactic neural-net"], ["user_id", 28], ["created_at", "2022-12-04 20:11:39.330223"], ["updated_at", "2022-12-04 20:11:39.330223"]]
+  [1m[36mTRANSACTION (85.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Proactive next generation Graphic Interface"], ["user_id", 32], ["created_at", "2022-12-04 20:11:39.429554"], ["updated_at", "2022-12-04 20:11:39.429554"]]
+  [1m[36mTRANSACTION (98.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "61"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Object-based homogeneous concept"], ["user_id", 28], ["created_at", "2022-12-04 20:11:39.545460"], ["updated_at", "2022-12-04 20:11:39.545460"]]
+  [1m[36mTRANSACTION (103.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Assimilated fresh-thinking customer loyalty"], ["user_id", 33], ["created_at", "2022-12-04 20:11:39.662260"], ["updated_at", "2022-12-04 20:11:39.662260"]]
+  [1m[36mTRANSACTION (82.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Operative dedicated database"], ["user_id", 28], ["created_at", "2022-12-04 20:11:39.770403"], ["updated_at", "2022-12-04 20:11:39.770403"]]
+  [1m[36mTRANSACTION (83.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Proactive executive groupware"], ["user_id", 34], ["created_at", "2022-12-04 20:11:39.867417"], ["updated_at", "2022-12-04 20:11:39.867417"]]
+  [1m[36mTRANSACTION (91.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Cross-platform zero administration orchestration"], ["user_id", 25], ["created_at", "2022-12-04 20:11:39.975182"], ["updated_at", "2022-12-04 20:11:39.975182"]]
+  [1m[36mTRANSACTION (93.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Multi-lateral object-oriented system engine"], ["user_id", 32], ["created_at", "2022-12-04 20:11:40.084525"], ["updated_at", "2022-12-04 20:11:40.084525"]]
+  [1m[36mTRANSACTION (90.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "User-centric well-modulated frame"], ["user_id", 30], ["created_at", "2022-12-04 20:11:40.185125"], ["updated_at", "2022-12-04 20:11:40.185125"]]
+  [1m[36mTRANSACTION (87.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Polarised value-added flexibility"], ["user_id", 27], ["created_at", "2022-12-04 20:11:40.285830"], ["updated_at", "2022-12-04 20:11:40.285830"]]
+  [1m[36mTRANSACTION (82.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Phased non-volatile matrices"], ["user_id", 32], ["created_at", "2022-12-04 20:11:40.387109"], ["updated_at", "2022-12-04 20:11:40.387109"]]
+  [1m[36mTRANSACTION (139.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "70"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Persevering 24/7 implementation"], ["user_id", 28], ["created_at", "2022-12-04 20:11:40.543009"], ["updated_at", "2022-12-04 20:11:40.543009"]]
+  [1m[36mTRANSACTION (83.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Stand-alone radical protocol"], ["user_id", 27], ["created_at", "2022-12-04 20:11:40.642472"], ["updated_at", "2022-12-04 20:11:40.642472"]]
+  [1m[36mTRANSACTION (90.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "72"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Open-source leading edge definition"], ["user_id", 28], ["created_at", "2022-12-04 20:11:40.752858"], ["updated_at", "2022-12-04 20:11:40.752858"]]
+  [1m[36mTRANSACTION (95.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Quality-focused systemic support"], ["user_id", 27], ["created_at", "2022-12-04 20:11:40.863380"], ["updated_at", "2022-12-04 20:11:40.863380"]]
+  [1m[36mTRANSACTION (73.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "74"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Sharable contextually-based website"], ["user_id", 35], ["created_at", "2022-12-04 20:11:40.951335"], ["updated_at", "2022-12-04 20:11:40.951335"]]
+  [1m[36mTRANSACTION (91.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Balanced systematic orchestration"], ["user_id", 28], ["created_at", "2022-12-04 20:11:41.052761"], ["updated_at", "2022-12-04 20:11:41.052761"]]
+  [1m[36mTRANSACTION (73.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Persevering bi-directional forecast"], ["user_id", 34], ["created_at", "2022-12-04 20:11:41.140522"], ["updated_at", "2022-12-04 20:11:41.140522"]]
+  [1m[36mTRANSACTION (89.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "77"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Open-source reciprocal support"], ["user_id", 32], ["created_at", "2022-12-04 20:11:41.237581"], ["updated_at", "2022-12-04 20:11:41.237581"]]
+  [1m[36mTRANSACTION (95.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Realigned upward-trending middleware"], ["user_id", 30], ["created_at", "2022-12-04 20:11:41.342804"], ["updated_at", "2022-12-04 20:11:41.342804"]]
+  [1m[36mTRANSACTION (95.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "79"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Stand-alone bifurcated application"], ["user_id", 35], ["created_at", "2022-12-04 20:11:41.452570"], ["updated_at", "2022-12-04 20:11:41.452570"]]
+  [1m[36mTRANSACTION (96.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Object-based exuding process improvement"], ["user_id", 25], ["created_at", "2022-12-04 20:11:41.564323"], ["updated_at", "2022-12-04 20:11:41.564323"]]
+  [1m[36mTRANSACTION (115.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Ameliorated fault-tolerant leverage"], ["user_id", 33], ["created_at", "2022-12-04 20:11:41.692902"], ["updated_at", "2022-12-04 20:11:41.692902"]]
+  [1m[36mTRANSACTION (91.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "82"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Secured clear-thinking artificial intelligence"], ["user_id", 33], ["created_at", "2022-12-04 20:11:41.793541"], ["updated_at", "2022-12-04 20:11:41.793541"]]
+  [1m[36mTRANSACTION (125.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Team-oriented asynchronous framework"], ["user_id", 26], ["created_at", "2022-12-04 20:11:41.926849"], ["updated_at", "2022-12-04 20:11:41.926849"]]
+  [1m[36mTRANSACTION (104.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Proactive user-facing collaboration"], ["user_id", 29], ["created_at", "2022-12-04 20:11:42.037143"], ["updated_at", "2022-12-04 20:11:42.037143"]]
+  [1m[36mTRANSACTION (95.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Configurable grid-enabled orchestration"], ["user_id", 25], ["created_at", "2022-12-04 20:11:42.138224"], ["updated_at", "2022-12-04 20:11:42.138224"]]
+  [1m[36mTRANSACTION (103.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "86"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Progressive explicit definition"], ["user_id", 30], ["created_at", "2022-12-04 20:11:42.249219"], ["updated_at", "2022-12-04 20:11:42.249219"]]
+  [1m[36mTRANSACTION (98.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "2"], ["text", "Progressive even-keeled migration"], ["user_id", 28], ["created_at", "2022-12-04 20:11:42.355393"], ["updated_at", "2022-12-04 20:11:42.355393"]]
+  [1m[36mTRANSACTION (124.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "88"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Profit-focused zero tolerance productivity"], ["user_id", 34], ["created_at", "2022-12-04 20:11:42.496342"], ["updated_at", "2022-12-04 20:11:42.496342"]]
+  [1m[36mTRANSACTION (132.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "0"], ["text", "Integrated optimizing policy"], ["user_id", 30], ["created_at", "2022-12-04 20:11:42.648572"], ["updated_at", "2022-12-04 20:11:42.648572"]]
+  [1m[36mTRANSACTION (115.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", "1"], ["text", "Visionary demand-driven budgetary management"], ["user_id", 26], ["created_at", "2022-12-04 20:11:42.784628"], ["updated_at", "2022-12-04 20:11:42.784628"]]
+  [1m[36mTRANSACTION (127.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "25"], ["followerId", "34"], ["created_at", "2022-12-04 20:11:42.929561"], ["updated_at", "2022-12-04 20:11:42.929561"]]
+  [1m[36mTRANSACTION (167.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (1.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "26"], ["followerId", "25"], ["created_at", "2022-12-04 20:11:43.106637"], ["updated_at", "2022-12-04 20:11:43.106637"]]
+  [1m[36mTRANSACTION (115.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (1.4ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "27"], ["followerId", "29"], ["created_at", "2022-12-04 20:11:43.239394"], ["updated_at", "2022-12-04 20:11:43.239394"]]
+  [1m[36mTRANSACTION (119.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (2.0ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "28"], ["followerId", "34"], ["created_at", "2022-12-04 20:11:43.376423"], ["updated_at", "2022-12-04 20:11:43.376423"]]
+  [1m[36mTRANSACTION (89.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.9ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "29"], ["followerId", "30"], ["created_at", "2022-12-04 20:11:43.486265"], ["updated_at", "2022-12-04 20:11:43.486265"]]
+  [1m[36mTRANSACTION (113.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.6ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "30"], ["followerId", "32"], ["created_at", "2022-12-04 20:11:43.615731"], ["updated_at", "2022-12-04 20:11:43.615731"]]
+  [1m[36mTRANSACTION (78.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.5ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "31"], ["followerId", "29"], ["created_at", "2022-12-04 20:11:43.703958"], ["updated_at", "2022-12-04 20:11:43.703958"]]
+  [1m[36mTRANSACTION (191.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.5ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "32"], ["followerId", "25"], ["created_at", "2022-12-04 20:11:43.903139"], ["updated_at", "2022-12-04 20:11:43.903139"]]
+  [1m[36mTRANSACTION (116.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "33"], ["followerId", "32"], ["created_at", "2022-12-04 20:11:44.024990"], ["updated_at", "2022-12-04 20:11:44.024990"]]
+  [1m[36mTRANSACTION (129.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.8ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "34"], ["followerId", "31"], ["created_at", "2022-12-04 20:11:44.161057"], ["updated_at", "2022-12-04 20:11:44.161057"]]
+  [1m[36mTRANSACTION (88.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (1.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "35"], ["followerId", "29"], ["created_at", "2022-12-04 20:11:44.263960"], ["updated_at", "2022-12-04 20:11:44.263960"]]
+  [1m[36mTRANSACTION (93.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Create (0.3ms)[0m  [1m[32mINSERT INTO "user_followers" ("userId", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["userId", "36"], ["followerId", "28"], ["created_at", "2022-12-04 20:11:44.369367"], ["updated_at", "2022-12-04 20:11:44.369367"]]
+  [1m[36mTRANSACTION (117.7ms)[0m  [1m[36mcommit transaction[0m
