@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from 'react-router-dom';
 
 
 function Login(props) {
@@ -63,7 +64,7 @@ function Login(props) {
         value = {password}
         onChange = {handlePasswordChange}
         />
-        <input type="submit" value="Login"/>
+        <input onSubmit={() => console.log("Test")} type="submit" value="Login"/>
     </form>
         </div>
 }
