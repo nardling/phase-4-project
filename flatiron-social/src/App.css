@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.login-form {
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.login-form input[type="submit"] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.login-form .container {
+  padding: 16px;
+}
+
+.login-header {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px grey;
+}

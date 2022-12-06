@@ -8,29 +8,15 @@ import Header from './Components/Header';
 
 function App() {
 
-  const [user, setUser] = useState(null)
+  const [errors, setErrors] = useState([])
+  const [currentUser, setCurrentUser] = useState(null)
 
 
-// allows user to stay logged in after page refresh
+const updateUser = (user) => setCurrentUser(user)
 
-  useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
 
-// sets user state to user upon successful login
-  function handleLogin(user) {
-    setUser(user);
-  }
-
-// self explanatory
-  function handleLogout() {
-    setUser(null);
-  }
-
+console.log(currentUser)
+console.log(errors)
 
 
 
@@ -40,10 +26,12 @@ function App() {
     <Switch>
       {/* <Header user={user} handleLogout={handleLogout}/> */}
       <Route exact path ="/">
-        <Home />
+        <Login updateUser = {updateUser} setErrors={setErrors} currentUser={currentUser}/>
       </Route>
-
     </Switch>
+
+    {currentUser ? <h2>You're logged in!</h2> : <h2>Please LogIn</h2>}
+    {errors.length > 0 ? <p>{errors}</p> : null }
     
     </div>
   );
