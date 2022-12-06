@@ -11,6 +11,17 @@ User.destroy_all
 Post.destroy_all
 UserFollower.destroy_all
 
+
+# Making Template Users for us to login with
+admin = User.create(name: "admin", handle: "ADMIN", password: "1234")
+admin2 = User.create(name: "admin2", handle: "ADMIN2", password: "password")
+
+# Followers for template users
+UserFollower.create(user_id: admin)
+UserFollower.create(user_id: admin)
+UserFollower.create(user_id: admin2)
+UserFollower.create(user_id: admin2)
+
 User.create!([
     {
         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
@@ -74,6 +85,6 @@ for u in uid0..uidn do
         while f == u do
             f = rand(r) + u0.id
         end
-        uf = UserFollower.create!(userId: u, followerId: f)
+        uf = UserFollower.create!(user_id: u, followerId: f)
     end
 end
