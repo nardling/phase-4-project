@@ -9,5 +9,9 @@ Rails.application.routes.draw do
 
   get '/latest/:id', to: 'posts#getLatest'
 
-  get '/postDetail/:id', to: 'post#showDetail'
+  get '/postDetail/:id', to: 'posts#showDetail'
+
+  post '/createPost/', to: 'posts#createNew'
+
+  post '/createComment', to: 'posts#createComment'
 end
