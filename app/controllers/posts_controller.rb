@@ -7,6 +7,16 @@ class PostsController < ApplicationController
         render json: posts, include: [:child_posts, :user]
     end
 
+    def showDetail
+        posts = Post.where(id: params[:id]).order(:created_at)
+        render json: posts, include: [:child_posts, :user]
+    end
+
+    def getComments
+        posts = Post.where(parentPostId: params[:id]).order(:created_at)
+        render json: posts, include: :user
+    end
+    
     # def show
     #     uf = UserFollower.where(user_id: params[:id])   #.pluck(:followerId)
     #     puts "followers"

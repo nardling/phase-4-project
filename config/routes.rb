@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/postDetail/:id', to: 'posts#showDetail'
 
+  get '/getComments/:id', to: 'posts#getComments'
+
   post '/createPost/', to: 'posts#createNew'
 
   post '/createComment', to: 'posts#createComment'
