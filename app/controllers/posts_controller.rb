@@ -28,13 +28,13 @@ class PostsController < ApplicationController
     # end
 
     def createNew
-        Post.create!(new_post_params)
-        render json: {}, status: :ok
+        post = Post.create!(new_post_params)
+        render json: post, status: :ok, include: [:child_posts, :user]
     end
 
     def createComment
-        Post.create!(comment_params)
-        render json: {}, status: :ok
+        post = Post.create!(comment_params)
+        render json: post, status: :ok, include: [:child_posts, :user]
     end
 
 

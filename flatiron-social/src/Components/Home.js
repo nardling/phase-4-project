@@ -43,7 +43,7 @@ function postDataChange(e){
         .then(res => res.json())
         .then(p => {
             setPosts(p)
-            console.log(p)
+            // console.log(p)
             setErrors([])
         })
     },[])
@@ -55,7 +55,7 @@ function postDataChange(e){
                 user_id: currentUser.id,
                 text: newPostData
             }
-            console.log(newPost)
+            // console.log(newPost)
             createNewPost(newPost)
             setNewPostData("")
         }
@@ -70,12 +70,14 @@ function postDataChange(e){
             body: JSON.stringify(newPost),
         })
         .then(res => res.json())
-        .then(postData => setPosts({...posts, postData}))
+        .then(postData => {
+            // debugger
+            setPosts([...posts, postData])})
     }
 
 
-    console.log(currentUser)
-    const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={post.user}/>)
+    // console.log(currentUser)
+    const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} />)
 
 
     return <div>

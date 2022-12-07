@@ -15,7 +15,7 @@ return (
         <Comment>
         {/* <Comment.Avatar src='/images/avatar/small/matt.jpg' /> */}
         <Comment.Content>
-            <Comment.Author as='a'>{currentUser.handle}</Comment.Author>
+            <Comment.Author as='a'>{post.user.handle}</Comment.Author>
             <Comment.Metadata>
             <div>Today at 5:42PM</div>
             </Comment.Metadata>
