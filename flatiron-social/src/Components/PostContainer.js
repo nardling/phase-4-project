@@ -1,8 +1,32 @@
 import React from 'react'
+import { Button, Comment, Form, Header } from 'semantic-ui-react'
 
-function PostContainer() {
+function PostContainer(props) {
+
+    const {post, currentUser} = props
 return (
-    <div>PostContainer</div>
+    <div className='feed'>
+            {/* <h4>{currentUser.handle} says:   </h4>
+            <p className='feed-content'>{post.text}</p>
+           */}
+        <Comment.Group>
+      
+
+        <Comment>
+        <Comment.Avatar src='/images/avatar/small/matt.jpg' />
+        <Comment.Content>
+            <Comment.Author as='a'>{currentUser.handle}</Comment.Author>
+            <Comment.Metadata>
+            <div>Today at 5:42PM</div>
+            </Comment.Metadata>
+            <Comment.Text>{post.text}</Comment.Text>
+            <Comment.Actions>
+            <Comment.Action>Reply</Comment.Action>
+            </Comment.Actions>
+        </Comment.Content>
+        </Comment>
+        </Comment.Group>
+        </div>
 )
 }
 

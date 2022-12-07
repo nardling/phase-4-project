@@ -53,7 +53,7 @@ function Login(props) {
 
 
     return <div>
-        <h1 className="login-header">Welcome! Please Login</h1>
+        <h1 className="login-header">Welcome to Reactr</h1>
 
         <form  className="login-form" onSubmit={handleSubmit}>
         <label>Name:</label>
@@ -65,7 +65,7 @@ function Login(props) {
         />
         <label>Password:</label>
         <input 
-        type='text'
+        type='password'
         name='name'
         value = {password}
         onChange = {handlePasswordChange}
