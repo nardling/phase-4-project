@@ -16,6 +16,11 @@ function Home(props) {
 
     const history = useHistory()
     const [posts, setPosts] = useState([])
+    const [newPostData, setNewPostData] = useState("")
+
+function postDataChange(e){
+    setNewPostData(e.target.value)
+}
 
     // Logs out user, returns them to login page
     const handleLogout = () => {
@@ -42,19 +47,30 @@ function Home(props) {
             })
         },[])
 
+
+        // function handlePostSubmit(e){
+        //     e.preventDefault()
+        //     const newPost = {
+        //         user_id: currentUser.id,
+        //         text: newPostData
+        //     }
+
+        //     setNewPostData("")
+        // }
+
+        // function
+
+
 console.log(currentUser)
 const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={post.user}/>)
 
     return <div>
         {/* CREATING POSTS */}
         <h1 className="login-header">Welcome To Reactr</h1>
-        <form  className="create-post-form" >
+        <form  className="create-post-form"  onSubmit={handlePostSubmit}>
         <label>What's on your mind?</label>
-        
-        <Form>
-            <TextArea placeholder='Tell the world' />
-        </Form>
-        <input type="submit" value="Login"/>
+            <TextArea onChange={postDataChange} placeholder='Talk some shit' />
+                    <button>Submit</button>
     </form>
 
         {/* <Link onClick={handleLogout} to="/">Click here to go to home</Link> */}
