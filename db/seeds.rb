@@ -29,6 +29,11 @@ Post.create(user_id: 1, text:"The beauty of programming is that there's always s
 Post.create(user_id: 1, text:"I'm so grateful to be a programmer because it allows me to be a part of the tech industry and contribute to some of the most exciting innovations of our time.")
 Post.create(user_id: 1, text:"Programming isn't just a job for me, it's a passion. I love the feeling of being able to create something out of nothing and see it come to life.")
 
+# for admin 2
+Post.create(user_id: 2, text:"The moon is the Earth's only natural satellite. It orbits the Earth at an average distance of about 238,855 miles (384,400 kilometers), and has a diameter of about 2,159 miles (3,474 kilometers).")
+Post.create(user_id: 2, text:"The moon's gravitational pull causes the oceans on Earth to have tides. The tides are caused by the differences in gravitational forces on different parts of the Earth due to the moon's position in its orbit. The moon's gravity also causes the length of a day on Earth to slowly increase over time.")
+
+
 User.create!([
     {
         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)

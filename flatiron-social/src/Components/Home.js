@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom'
-
+import PostContainer from "./PostContainer";
 
 
 
@@ -39,13 +39,14 @@ function Home(props) {
             .then(setPosts)
         },[])
 
-console.log(posts)
+console.log(currentUser)
+const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={currentUser}/>)
 
     return <div>
-        <h1>Welcome To Flatiron Social</h1>
+        <h1 className="login-header">Welcome To Reactr</h1>
         {/* <Link onClick={handleLogout} to="/">Click here to go to home</Link> */}
         <button onClick={handleLogout} className="logout-button">Logout</button>
-        {/* <PostContainer /> */}
+        {renderPosts}
         </div>
 }
 
