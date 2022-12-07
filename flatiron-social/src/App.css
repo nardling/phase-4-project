@@ -90,3 +90,26 @@
   text-align: center;
   text-shadow: 1px 1px 2px grey;
 }
+
+.logout-button{
+    /* Set the size and shape of the button */
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+  
+    /* Set the font and text styles for the button */
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+  
+    /* Set the background color for the button */
+    background-color: #4CAF50;
+  
+    /* Add a gradient to the button */
+    background-image: linear-gradient(to bottom, #4CAF50, #2196F3);
+  
+    /* Add a drop shadow to the button */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
