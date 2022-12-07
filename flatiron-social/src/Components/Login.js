@@ -11,7 +11,6 @@ function Login(props) {
     const history = useHistory()
 
 
-
     function handleNameChange(e){
         setName(e.target.value)
     }
@@ -70,7 +69,7 @@ function Login(props) {
         value = {password}
         onChange = {handlePasswordChange}
         />
-        <input onSubmit={() => console.log("Test")} type="submit" value="Login"/>
+        <input type="submit" value="Login"/>
     </form>
         </div>
 }

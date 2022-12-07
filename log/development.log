@@ -8880,3 +8880,205 @@ Processing by SessionsController#delete as */*
 Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 56)
 
 
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUserFollower Load (0.1ms)[0m  [1m[34mSELECT "user_followers".* FROM "user_followers" WHERE "user_followers"."user_id" = ?[0m  [["user_id", 14]]
+Started POST "/login" for ::1 at 2022-12-07 10:28:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 257ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 23788)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 10:28:02 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 59ms (Views: 47.6ms | ActiveRecord: 0.7ms | Allocations: 19828)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-07 10:31:06 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 60)
+
+
+Started POST "/createPost/" for ::1 at 2022-12-07 10:39:40 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user_id": 1,
+    "text": Test Post
+}
+Processing by PostsController#createNew as */*
+Completed 400 Bad Request in 3ms (Allocations: 743)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/posts_controller.rb:28:in `new_post_params'
+app/controllers/posts_controller.rb:17:in `createNew'
+Started POST "/createPost/" for ::1 at 2022-12-07 10:39:53 -0500
+Processing by PostsController#createNew as */*
+  Parameters: {"user_id"=>1, "text"=>"test post", "post"=>{"text"=>"test post", "user_id"=>1}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:17:in `createNew'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `createNew'
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "test post"], ["user_id", 1], ["created_at", "2022-12-07 15:39:53.950109"], ["updated_at", "2022-12-07 15:39:53.950109"]]
+  ↳ app/controllers/posts_controller.rb:17:in `createNew'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:17:in `createNew'
+Completed 200 OK in 24ms (Views: 1.2ms | ActiveRecord: 4.9ms | Allocations: 7342)
+
+
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+Started POST "/login" for ::1 at 2022-12-07 10:40:30 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 255ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 704)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 10:40:30 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1471)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-07 10:52:14 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 2ms (Allocations: 56)
+
+
+Started POST "/login" for ::1 at 2022-12-07 10:52:17 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 283ms (Views: 0.5ms | ActiveRecord: 3.5ms | Allocations: 834)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 10:52:17 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1473)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-07 10:52:23 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 56)
+
+
+Started POST "/login" for ::1 at 2022-12-07 10:52:25 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 277ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 675)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 10:52:25 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1434)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-07 10:52:38 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 56)
+
+
+Started POST "/login" for ::1 at 2022-12-07 10:55:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 270ms (Views: 2.4ms | ActiveRecord: 4.1ms | Allocations: 687)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 10:55:51 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1437)
+
+
+Started POST "/login" for ::1 at 2022-12-07 10:56:46 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 257ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 674)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 10:56:46 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 1434)
+
+
+Started POST "/login" for ::1 at 2022-12-07 11:04:34 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 279ms (Views: 1.7ms | ActiveRecord: 4.9ms | Allocations: 830)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 11:04:34 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1473)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 11:07:21 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 1434)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 11:07:31 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 1434)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 11:07:46 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 1434)
+
+
+Started GET "/posts/1" for ::1 at 2022-12-07 11:09:13 -0500
+Processing by PostsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.5ms | Allocations: 1434)
+
+
