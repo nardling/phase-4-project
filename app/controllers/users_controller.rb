@@ -11,4 +11,18 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     render json: user, status: :ok, include: [:posts]
     end
+
+    def createAccount
+        user = User.find_by(name: params[:name])
+        if (user)
+            render json: {errors: "Name already exists"}, status: 401
+        else
+            u = User.save(name: params[:name], handle: params[:handle], password: params[:password])
+            if (u)
+                render json: {}, status: :ok
+            else
+                render json: { errors: "User Creation Failed" }, status: 401
+            end
+        end
+    end
 end

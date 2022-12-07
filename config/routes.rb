@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   post '/createComment', to: 'posts#createComment'
 
   post '/login', to: 'sessions#create'
+  post '/createUser', to: 'users#createAccount'
   delete '/logout', to: 'sessions#delete'
 end
