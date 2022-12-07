@@ -23,6 +23,7 @@ return (
             <Comment.Actions>
             <button>Reply</button>
             <button>Delete</button>
+            {post.child_posts.length > 0 ? <button>Show Comments</button> : <></>}
             </Comment.Actions>
         </Comment.Content>
         </Comment>

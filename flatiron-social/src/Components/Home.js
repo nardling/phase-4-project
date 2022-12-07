@@ -37,15 +37,16 @@ function postDataChange(e){
         })
         }
 
-        // Fetches posts associated with logged-in user
-        useEffect(() => {
-            fetch(postUrl + `${currentUser.id}`)
-            .then(res => res.json())
-            .then(p => {
-                setPosts(p)
-                setErrors([])
-            })
-        },[])
+    // Fetches posts associated with logged-in user
+    useEffect(() => {
+        fetch(postUrl + `${currentUser.id}`)
+        .then(res => res.json())
+        .then(p => {
+            setPosts(p)
+            console.log(p)
+            setErrors([])
+        })
+    },[])
 
 
         function handlePostSubmit(e){
@@ -73,8 +74,9 @@ function postDataChange(e){
     }
 
 
-// console.log(currentUser)
-const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={post.user}/>)
+    console.log(currentUser)
+    const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={post.user}/>)
+
 
     return <div>
         {/* CREATING POSTS */}
