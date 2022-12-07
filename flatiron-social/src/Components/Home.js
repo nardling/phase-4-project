@@ -48,20 +48,32 @@ function postDataChange(e){
         },[])
 
 
-        // function handlePostSubmit(e){
-        //     e.preventDefault()
-        //     const newPost = {
-        //         user_id: currentUser.id,
-        //         text: newPostData
-        //     }
+        function handlePostSubmit(e){
+            e.preventDefault()
+            const newPost = {
+                user_id: currentUser.id,
+                text: newPostData
+            }
+            console.log(newPost)
+            createNewPost(newPost)
+            setNewPostData("")
+        }
 
-        //     setNewPostData("")
-        // }
+        function createNewPost(newPost){
+        fetch('http://localhost:3000/createPost/', {
+            method: "POST",
+            headers: {
+                "Content-type": 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(newPost),
+        })
+        .then(res => res.json())
+        .then(postData => setPosts({...posts, postData}))
+    }
 
-        // function
 
-
-console.log(currentUser)
+// console.log(currentUser)
 const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={post.user}/>)
 
     return <div>
