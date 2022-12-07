@@ -9082,3 +9082,364 @@ Processing by PostsController#show as */*
 Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.5ms | Allocations: 1434)
 
 
+Started POST "/login" for ::1 at 2022-12-07 12:57:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 257ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 24921)
+
+
+Started GET "/latest/1" for ::1 at 2022-12-07 12:57:49 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUserFollower Pluck (0.1ms)[0m  [1m[34mSELECT "user_followers"."followerId" FROM "user_followers" WHERE "user_followers"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" ASC[0m  [["user_id", 2], ["user_id", 3], ["user_id", 1], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 28ms (Views: 19.6ms | ActiveRecord: 1.3ms | Allocations: 41803)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-07 12:59:27 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 60)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 395]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 396]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 397]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 398]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 399]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 400]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 401]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 402]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 403]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserFollower Load (0.1ms)[0m  [1m[34mSELECT "user_followers".* FROM "user_followers"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.1ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.1ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.1ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "admin"], ["handle", "ADMIN"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-07 17:59:38.202319"], ["updated_at", "2022-12-07 17:59:38.202319"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "admin2"], ["handle", "ADMIN2"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-07 17:59:38.452968"], ["updated_at", "2022-12-07 17:59:38.452968"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "admin3"], ["handle", "ADMIN3"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-07 17:59:38.701626"], ["updated_at", "2022-12-07 17:59:38.701626"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserFollower Create (0.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("user_id", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["followerId", 2], ["created_at", "2022-12-07 17:59:38.707772"], ["updated_at", "2022-12-07 17:59:38.707772"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollower Create (0.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("user_id", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["followerId", 1], ["created_at", "2022-12-07 17:59:38.709384"], ["updated_at", "2022-12-07 17:59:38.709384"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserFollower Create (0.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("user_id", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["followerId", 3], ["created_at", "2022-12-07 17:59:38.710858"], ["updated_at", "2022-12-07 17:59:38.710858"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "I absolutely love programming! It's such a creative and challenging field that allows me to solve problems and build things that make a difference in the world."], ["user_id", 1], ["created_at", "2022-12-07 17:59:38.712592"], ["updated_at", "2022-12-07 17:59:38.712592"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "There's nothing quite like the feeling of finally solving a tough programming problem and seeing your code come to life. #programmingrocks"], ["user_id", 1], ["created_at", "2022-12-07 17:59:38.714290"], ["updated_at", "2022-12-07 17:59:38.714290"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "The beauty of programming is that there's always something new to learn and new ways to improve your skills. It's a never-ending journey of discovery and growth."], ["user_id", 1], ["created_at", "2022-12-07 17:59:38.715830"], ["updated_at", "2022-12-07 17:59:38.715830"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "I'm so grateful to be a programmer because it allows me to be a part of the tech industry and contribute to some of the most exciting innovations of our time."], ["user_id", 1], ["created_at", "2022-12-07 17:59:38.717424"], ["updated_at", "2022-12-07 17:59:38.717424"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "Programming isn't just a job for me, it's a passion. I love the feeling of being able to create something out of nothing and see it come to life."], ["user_id", 1], ["created_at", "2022-12-07 17:59:38.719020"], ["updated_at", "2022-12-07 17:59:38.719020"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "The moon is the Earth's only natural satellite. It orbits the Earth at an average distance of about 238,855 miles (384,400 kilometers), and has a diameter of about 2,159 miles (3,474 kilometers)."], ["user_id", 2], ["created_at", "2022-12-07 17:59:38.720597"], ["updated_at", "2022-12-07 17:59:38.720597"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "The moon's gravitational pull causes the oceans on Earth to have tides. The tides are caused by the differences in gravitational forces on different parts of the Earth due to the moon's position in its orbit. The moon's gravity also causes the length of a day on Earth to slowly increase over time."], ["user_id", 2], ["created_at", "2022-12-07 17:59:38.722168"], ["updated_at", "2022-12-07 17:59:38.722168"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "408"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "Admin 3's Comment On Admin1's post about Programming"], ["user_id", 3], ["created_at", "2022-12-07 17:59:38.723800"], ["updated_at", "2022-12-07 17:59:38.723800"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "409"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "Admin 3's Comment On Admin2's post about Satellites"], ["user_id", 3], ["created_at", "2022-12-07 17:59:38.725472"], ["updated_at", "2022-12-07 17:59:38.725472"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/login" for ::1 at 2022-12-07 12:59:42 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 262ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 689)
+
+
+Started GET "/latest/1" for ::1 at 2022-12-07 12:59:43 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUserFollower Pluck (0.1ms)[0m  [1m[34mSELECT "user_followers"."followerId" FROM "user_followers" WHERE "user_followers"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" ASC[0m  [["user_id", 2], ["user_id", 3], ["user_id", 1], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 2.0ms | Allocations: 13163)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 404]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 405]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 406]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 407]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 408]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 409]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 410]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 411]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 412]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserFollower Load (0.1ms)[0m  [1m[34mSELECT "user_followers".* FROM "user_followers"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserFollower Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_followers" WHERE "user_followers"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "admin"], ["handle", "ADMIN"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-07 17:59:56.064224"], ["updated_at", "2022-12-07 17:59:56.064224"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "admin2"], ["handle", "ADMIN2"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-07 17:59:56.315911"], ["updated_at", "2022-12-07 17:59:56.315911"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "handle", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "admin3"], ["handle", "ADMIN3"], ["password_digest", "[FILTERED]"], ["created_at", "2022-12-07 17:59:56.572063"], ["updated_at", "2022-12-07 17:59:56.572063"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserFollower Create (0.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("user_id", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["followerId", 2], ["created_at", "2022-12-07 17:59:56.577694"], ["updated_at", "2022-12-07 17:59:56.577694"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUserFollower Create (0.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("user_id", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["followerId", 1], ["created_at", "2022-12-07 17:59:56.579313"], ["updated_at", "2022-12-07 17:59:56.579313"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserFollower Create (0.1ms)[0m  [1m[32mINSERT INTO "user_followers" ("user_id", "followerId", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["followerId", 3], ["created_at", "2022-12-07 17:59:56.580789"], ["updated_at", "2022-12-07 17:59:56.580789"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "I absolutely love programming! It's such a creative and challenging field that allows me to solve problems and build things that make a difference in the world."], ["user_id", 1], ["created_at", "2022-12-07 17:59:56.582503"], ["updated_at", "2022-12-07 17:59:56.582503"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "There's nothing quite like the feeling of finally solving a tough programming problem and seeing your code come to life. #programmingrocks"], ["user_id", 1], ["created_at", "2022-12-07 17:59:56.584199"], ["updated_at", "2022-12-07 17:59:56.584199"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "The beauty of programming is that there's always something new to learn and new ways to improve your skills. It's a never-ending journey of discovery and growth."], ["user_id", 1], ["created_at", "2022-12-07 17:59:56.585785"], ["updated_at", "2022-12-07 17:59:56.585785"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "I'm so grateful to be a programmer because it allows me to be a part of the tech industry and contribute to some of the most exciting innovations of our time."], ["user_id", 1], ["created_at", "2022-12-07 17:59:56.587377"], ["updated_at", "2022-12-07 17:59:56.587377"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "Programming isn't just a job for me, it's a passion. I love the feeling of being able to create something out of nothing and see it come to life."], ["user_id", 1], ["created_at", "2022-12-07 17:59:56.588934"], ["updated_at", "2022-12-07 17:59:56.588934"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "The moon is the Earth's only natural satellite. It orbits the Earth at an average distance of about 238,855 miles (384,400 kilometers), and has a diameter of about 2,159 miles (3,474 kilometers)."], ["user_id", 2], ["created_at", "2022-12-07 17:59:56.590472"], ["updated_at", "2022-12-07 17:59:56.590472"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "0"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "The moon's gravitational pull causes the oceans on Earth to have tides. The tides are caused by the differences in gravitational forces on different parts of the Earth due to the moon's position in its orbit. The moon's gravity also causes the length of a day on Earth to slowly increase over time."], ["user_id", 2], ["created_at", "2022-12-07 17:59:56.591964"], ["updated_at", "2022-12-07 17:59:56.591964"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "417"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "Admin 3's Comment On Admin1's post about Programming"], ["user_id", 3], ["created_at", "2022-12-07 17:59:56.593455"], ["updated_at", "2022-12-07 17:59:56.593455"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("parentPostId", "rootPostId", "commentPermissions", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["parentPostId", "418"], ["rootPostId", "[FILTERED]"], ["commentPermissions", nil], ["text", "Admin 3's Comment On Admin2's post about Satellites"], ["user_id", 3], ["created_at", "2022-12-07 17:59:56.595001"], ["updated_at", "2022-12-07 17:59:56.595001"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started DELETE "/logout" for ::1 at 2022-12-07 12:59:58 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 57)
+
+
+Started POST "/login" for ::1 at 2022-12-07 12:59:59 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 278ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 688)
+
+
+Started GET "/latest/1" for ::1 at 2022-12-07 12:59:59 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUserFollower Pluck (0.1ms)[0m  [1m[34mSELECT "user_followers"."followerId" FROM "user_followers" WHERE "user_followers"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" ASC[0m  [["user_id", 2], ["user_id", 3], ["user_id", 1], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.7ms | Allocations: 13163)
+
+

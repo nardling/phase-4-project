@@ -27,6 +27,7 @@ class PostsController < ApplicationController
         render json: {}, status: :ok
     end
 
+
     private
     def new_post_params
         params.require(:post).permit(:user_id, :text, :commentPermissions).with_defaults(parentPostId: 0, rootPostId: 0)
