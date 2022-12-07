@@ -7,6 +7,12 @@ class PostsController < ApplicationController
         render json: posts, include: :child_posts
     end
 
+    def show
+    posts = Post.where(user_id: params[:id])
+    render json: posts, status: :ok
+    
+    end
+
     def createNew
         Post.create!(new_post_params)
         render json: {}, status: :ok

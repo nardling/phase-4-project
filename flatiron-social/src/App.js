@@ -17,30 +17,28 @@ function App() {
 const updateUser = (user) => setCurrentUser(user)
 
 
-// console.log(currentUser)
+// console.log(currentUser.id)
 // console.log(errors)
 
 
 
   return (
     <div className="App">
-
-{/* Switches NOT working yet, but also not breaking anything */}
-    {currentUser ? <div>
-      {/* {setErrors(null)} */}
       <Switch>
-        <Route path='/'>
-          <Home setCurrentUser={setCurrentUser}/>
+        <Route path='/home'>
+          <Home setCurrentUser={setCurrentUser} currentUser={currentUser} setErrors={setErrors}/>
         </Route>
-      </Switch>
-    </div>
-    : 
-    <div>
-    <Switch>
+    
       <Route exact path ="/">
         <Login updateUser = {updateUser} setErrors={setErrors} currentUser={currentUser}/>
       </Route>
     </Switch>
+{/* Switches NOT working yet, but also not breaking anything */}
+    {currentUser ? <div>
+      
+    </div>
+    : 
+    <div>
     
 
     </div>

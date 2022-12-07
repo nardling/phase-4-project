@@ -1,13 +1,16 @@
 import React, {useState} from "react";
-import { Link } from 'react-router-dom';
-
+// import { Link } from 'react-router-dom';
+import {useHistory} from 'react-router-dom'
 
 function Login(props) {
-
     const {updateUser, setErrors} = props
+
 
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
+    const history = useHistory()
+
+
 
     function handleNameChange(e){
         setName(e.target.value)
@@ -34,7 +37,10 @@ function Login(props) {
             .then (res => {
                 if(res.ok){
                     res.json()
-                    .then(user => updateUser(user))
+                    .then(user => {
+                        updateUser(user)
+                        history.push('/home')
+                    })
                 } else {
                     res.json()
                     .then(json => setErrors(json.errors))
