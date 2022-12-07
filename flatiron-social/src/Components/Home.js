@@ -39,18 +39,23 @@ function postDataChange(e){
 
     // Fetches posts associated with logged-in user
     useEffect(() => {
+         
         fetch(postUrl + `${currentUser.id}`)
         .then(res => res.json())
         .then(p => {
             setPosts(p)
-            console.log(p)
+            // console.log(p)
             setErrors([])
         })
+    
     },[])
 
 
+
         function handlePostSubmit(e){
-            e.preventDefault()
+        // debugger
+        e.preventDefault()
+        // console.log('hey')
             const newPost = {
                 user_id: currentUser.id,
                 text: newPostData
@@ -70,12 +75,16 @@ function postDataChange(e){
             body: JSON.stringify(newPost),
         })
         .then(res => res.json())
-        .then(postData => setPosts({...posts, postData}))
+        .then(postData => {
+            debugger
+            setPosts([...posts, postData])
+        })
+        
     }
 
 
-    console.log(currentUser)
-    const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={post.user}/>)
+
+    const renderPosts = posts.map(post => <PostContainer key={post.id} post={post}  />)
 
 
     return <div>
@@ -83,8 +92,18 @@ function postDataChange(e){
         <h1 className="login-header">Welcome To Reactr</h1>
         <form  className="create-post-form"  onSubmit={handlePostSubmit}>
         <label>What's on your mind?</label>
+        <input 
+        type='text'
+        name='name'
+        value = {newPostData}
+        onChange={postDataChange}
+        // onChange = {handlePasswordChange}
+        />
+        <button type="submit">submit</button>
+        {/* <Form onSubmit={handlePostSubmit}>
             <TextArea onChange={postDataChange} placeholder='Talk some shit' />
-                    <button>Submit</button>
+            <button >Submit</button>
+        </Form> */}
     </form>
 
         {/* <Link onClick={handleLogout} to="/">Click here to go to home</Link> */}

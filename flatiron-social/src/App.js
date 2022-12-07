@@ -16,6 +16,27 @@ function App() {
 
 const updateUser = (user) => setCurrentUser(user)
 
+  useEffect(() => {
+    if (localStorage.uid){
+      fetch("http://localhost:3000/login", {
+                method:'POST',
+                headers:{'Content-Type': 'application/json', "auth-token": localStorage.uid},
+            })
+            // .catch(res => console.log(res))
+            .then (res => {
+                if(res.ok){
+                    res.json()
+                    .then(user => {
+                        updateUser(user)
+                        history.push('/home')
+                    })
+                } else {
+                    res.json()
+                    .then(json => setErrors(json.errors))
+                }
+            })
+    }
+  },[])
 
 // console.log(currentUser.id)
 // console.log(errors)

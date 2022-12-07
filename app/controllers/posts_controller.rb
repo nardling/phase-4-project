@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
     def getComments
         posts = Post.where(parentPostId: params[:id]).order(:created_at)
-        render json: posts, include: :user
+        render json: posts, include: [:child_posts, :user]
     end
     
     # def show
@@ -28,15 +28,20 @@ class PostsController < ApplicationController
     # end
 
     def createNew
-        Post.create!(new_post_params)
-        render json: {}, status: :ok
+        post = Post.create!(new_post_params)
+        render json: post, status: :ok, include: [:child_posts, :user]
     end
 
     def createComment
-        Post.create!(comment_params)
-        render json: {}, status: :ok
+        post = Post.create!(comment_params)
+        render json: post, status: :ok, include: [:child_posts, :user]
     end
 
+    def destroy
+    post = Post.find(params[:id])
+    post.destroy 
+    render json: {}, status: :ok
+    end
 
     private
     def new_post_params

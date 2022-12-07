@@ -4,6 +4,7 @@ import { Button, Comment, Form, Header } from 'semantic-ui-react'
 function PostContainer(props) {
 
     const {post, currentUser} = props
+    // console.log(p)
 return (
     <div className='feed'>
             {/* <h4>{currentUser.handle} says:   </h4>
@@ -15,14 +16,14 @@ return (
         <Comment>
         {/* <Comment.Avatar src='/images/avatar/small/matt.jpg' /> */}
         <Comment.Content>
-            <Comment.Author as='a'>{currentUser.handle}</Comment.Author>
+            <Comment.Author as='a'>{post.user.handle}</Comment.Author>
             <Comment.Metadata>
             <div>Today at 5:42PM</div>
             </Comment.Metadata>
             <Comment.Text>{post.text}</Comment.Text>
             <Comment.Actions>
             <button>Reply</button>
-            <button>Delete</button>
+            <button onClick={() => console.log(post.id)}>Delete</button>
             {post.child_posts.length > 0 ? <button>Show Comments</button> : <></>}
             </Comment.Actions>
         </Comment.Content>
