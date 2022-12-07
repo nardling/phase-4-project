@@ -17,10 +17,8 @@ admin = User.create(name: "admin", handle: "ADMIN", password: "1234")
 admin2 = User.create(name: "admin2", handle: "ADMIN2", password: "password")
 
 # Followers for template users
-UserFollower.create(user_id: admin)
-UserFollower.create(user_id: admin)
-UserFollower.create(user_id: admin2)
-UserFollower.create(user_id: admin2)
+UserFollower.create(user_id: admin.id, followerId: admin2.id)
+UserFollower.create(user_id: admin2.id, followerId: admin.id)
 
 # creating some posts for admin 1 
 Post.create(user_id: 1, text:"I absolutely love programming! It's such a creative and challenging field that allows me to solve problems and build things that make a difference in the world.")
@@ -34,44 +32,44 @@ Post.create(user_id: 2, text:"The moon is the Earth's only natural satellite. It
 Post.create(user_id: 2, text:"The moon's gravitational pull causes the oceans on Earth to have tides. The tides are caused by the differences in gravitational forces on different parts of the Earth due to the moon's position in its orbit. The moon's gravity also causes the length of a day on Earth to slowly increase over time.")
 
 
-User.create!([
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    },
-    {
-        name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
-    }
-])
+# User.create!([
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     },
+#     {
+#         name: Faker::Name.name, handle: Faker::Name.initials, password: Faker::Alphanumeric.alphanumeric(number: 10)
+#     }
+# ])
 
 u0=User.first
 un=User.last
@@ -87,16 +85,16 @@ r=un.id-u0.id
 # end
 
 # everyone gets two followers
-uid0 = User.first.id
-uidn = User.last.id
+# uid0 = User.first.id
+# uidn = User.last.id
 
-for u in uid0..uidn do
-    count = rand(4)
-    for i in 1..count do
-        f = rand(r) + u0.id
-        while f == u do
-            f = rand(r) + u0.id
-        end
-        uf = UserFollower.create!(user_id: u, followerId: f)
-    end
-end
+# for u in uid0..uidn do
+#     count = rand(4)
+#     for i in 1..count do
+#         f = rand(r) + u0.id
+#         while f == u do
+#             f = rand(r) + u0.id
+#         end
+#         uf = UserFollower.create!(user_id: u, followerId: f)
+#     end
+# end

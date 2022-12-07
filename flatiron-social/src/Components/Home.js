@@ -5,7 +5,7 @@ import PostContainer from "./PostContainer";
 import { Form, TextArea } from 'semantic-ui-react'
 
 
-const postUrl = 'http://localhost:3000/posts/'
+const postUrl = 'http://localhost:3000/latest/'
 
 
 
@@ -36,11 +36,14 @@ function Home(props) {
         useEffect(() => {
             fetch(postUrl + `${currentUser.id}`)
             .then(res => res.json())
-            .then(setPosts)
+            .then(p => {
+                setPosts(p)
+                setErrors([])
+            })
         },[])
 
 console.log(currentUser)
-const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={currentUser}/>)
+const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} currentUser={post.user}/>)
 
     return <div>
         {/* CREATING POSTS */}
