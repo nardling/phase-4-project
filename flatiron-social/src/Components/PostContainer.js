@@ -21,7 +21,8 @@ return (
             </Comment.Metadata>
             <Comment.Text>{post.text}</Comment.Text>
             <Comment.Actions>
-            <Comment.Action>Reply</Comment.Action>
+            <button>Reply</button>
+            <button>Delete</button>
             </Comment.Actions>
         </Comment.Content>
         </Comment>

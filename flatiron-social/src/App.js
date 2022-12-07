@@ -33,7 +33,7 @@ const updateUser = (user) => setCurrentUser(user)
         <Login updateUser = {updateUser} setErrors={setErrors} currentUser={currentUser}/>
       </Route>
     </Switch>
-{/* Switches NOT working yet, but also not breaking anything */}
+
     {currentUser ? <div>
       
     </div>
@@ -43,8 +43,6 @@ const updateUser = (user) => setCurrentUser(user)
 
     </div>
     } 
-
-   
 
     {errors.length > 0 ? <p>{errors}</p> : null }
     
