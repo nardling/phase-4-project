@@ -13,14 +13,17 @@ UserFollower.destroy_all
 
 
 # Making Template Users for us to login with
-admin = User.create(name: "admin", handle: "ADMIN", password: "1234")
-admin2 = User.create(name: "admin2", handle: "ADMIN2", password: "password")
+admin = User.create(name: "admin", handle: "Alexa", password: "1234")
+admin2 = User.create(name: "admin2", handle: "Siri", password: "password")
 admin3 = User.create(name: "admin3", handle: "ADMIN3", password: "password3")
+joe = User.create(name: "Joe", handle: "Joe", password: "12345")
 
 # Followers for template users
 UserFollower.create(user_id: admin.id, followerId: admin2.id)
 UserFollower.create(user_id: admin2.id, followerId: admin.id)
 UserFollower.create(user_id: admin.id, followerId: admin3.id)
+UserFollower.create(user_id: admin2.id, followerId: joe.id)
+UserFollower.create(user_id: admin.id, followerId: joe.id)
 
 # creating some posts for admin 1 
 Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text:"I absolutely love programming! It's such a creative and challenging field that allows me to solve problems and build things that make a difference in the world.")

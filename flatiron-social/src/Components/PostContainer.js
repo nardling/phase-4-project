@@ -60,10 +60,10 @@ return (
             </Comment.Metadata>
             <Comment.Text>{post.text}</Comment.Text>
             <Comment.Actions>
-            <button>Reply</button>
-            <button onClick={deleteClick}>Delete</button>
-            <button onClick={handleEdit}> Edit </button>
-            {(post.child_posts && post.child_posts.length > 0) ? <button>Show Comments</button> : <></>}
+            <button className='reply-button'>Reply</button>
+            <button className='edit-button' onClick={handleEdit}> Edit </button>
+            {(post.child_posts && post.child_posts.length > 0) ? <button className='show-comments-button'>Show Comments</button> : <></>}
+            <button className='delete-button' onClick={deleteClick}>Delete</button>
             </Comment.Actions>
         </Comment.Content>
         </Comment>
