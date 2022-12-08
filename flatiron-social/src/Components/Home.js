@@ -8,6 +8,7 @@ import { Form, TextArea } from 'semantic-ui-react'
 const postUrl = 'http://localhost:3000/latest/'
 // const deleteUrl = 'http://localhost:3000/posts/'
 const userPostsUrl = 'http://localhost:3000/userPosts/'
+const messageDetailsUrl = 'http://localhost:3000/postDetail'
 
 function Home(props) {
     const {setCurrentUser, currentUser, setErrors} = props
@@ -75,23 +76,32 @@ function Home(props) {
     }
 
     function createNewPost(newPost){
-    fetch('http://localhost:3000/createPost/', {
-        method: "POST",
-        headers: {
-            "Content-type": 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(newPost),
-    })
-    .then(res => res.json())
-    .then(postData => {
-        // debugger
-        setPosts([...posts, postData])})
+        fetch('http://localhost:3000/createPost/', {
+            method: "POST",
+            headers: {
+                "Content-type": 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(newPost),
+        })
+        .then(res => res.json())
+        .then(postData => {
+            // debugger
+            setPosts([...posts, postData])
+        })
     }
 
     function setStatus(msg) {
         setStatusMessage(msg)
         setTimeout(()=>{setStatusMessage("")}, 2000)
+    }
+
+    function getMessageDetails(id) {
+        fetch(messageDetailsUrl + "/" + id).then(res=>res.json())
+        .then(p=>{
+            // console.log(p)
+            setPosts(p)
+        })
     }
 
     // DELETE POSTS
@@ -111,6 +121,7 @@ function Home(props) {
         deletePost={deletePost} 
         currentUser = {currentUser}
         messageCallBack={setStatus}
+        getDetailsCallBack={getMessageDetails}
         />
         </div>)
 

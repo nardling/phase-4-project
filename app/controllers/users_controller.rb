@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         if (user)
             render json: {errors: "Name already exists"}, status: 401
         else
-            u = User.save(name: params[:name], handle: params[:handle], password: params[:password])
+            u = User.create(name: params[:name], handle: params[:handle], password: params[:password])
             if (u)
                 render json: {}, status: :ok
             else

@@ -3,7 +3,7 @@ import { Button, Comment, Form, Header } from 'semantic-ui-react'
 import EditPost from './EditPost'
 
 function PostContainer(props) {
-    const {post, currentUser, posts, setPosts, deletePost, messageCallBack} = props
+    const {post, currentUser, posts, setPosts, deletePost, messageCallBack, getDetailsCallBack} = props
     const [isEditing, setIsEditing] = useState(false)
 
     const addFollowerUrl = "http://localhost:3000/followUser/"
@@ -41,6 +41,11 @@ function PostContainer(props) {
             return true
         }
     }
+
+    function getPostDetails() {
+        getDetailsCallBack(post.id)
+    }
+
 return (
     <div className='feed'>
             {/* <h4>{currentUser.handle} says:   </h4>
@@ -62,7 +67,7 @@ return (
             <Comment.Actions>
             <button className='reply-button'>Reply</button>
             <button className='edit-button' onClick={handleEdit}> Edit </button>
-            {(post.child_posts && post.child_posts.length > 0) ? <button className='show-comments-button'>Show Comments</button> : <></>}
+            {(post.child_posts && post.child_posts.length > 0) ? <button className='show-comments-button' onClick={getPostDetails}>Show Comments</button> : <></>}
             <button className='delete-button' onClick={deleteClick}>Delete</button>
             </Comment.Actions>
         </Comment.Content>

@@ -8,8 +8,8 @@ class PostsController < ApplicationController
     end
 
     def showDetail
-        posts = Post.where(id: params[:id]).order(:created_at)
-        render json: posts, include: [:child_posts, :user]
+        posts = Post.where("rootPostId = ? OR id = ?", params[:id], params[:id]).order(:created_at)
+        render json: posts, include: :user
     end
 
     def getComments
