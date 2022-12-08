@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts, only: [:destroy, :index]
+  resources :posts, only: [:destroy, :index, :update]
   # resources :user_followers
   # resources :users, only: [:index, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

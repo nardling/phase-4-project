@@ -109,9 +109,9 @@ function postDataChange(e){
         <h1 className="login-header">Welcome To Reactr</h1>
         <form  className="create-post-form"  onSubmit={handlePostSubmit}>
         <label>What's on your mind?</label>
-            <TextArea onChange={postDataChange} placeholder='Talk some shit' />
+            <TextArea onChange={postDataChange} placeholder="What's on your mind?" />
                     <button>Submit</button>
-    </form>
+        </form>
 
 
         <button onClick={handleLogout} className="logout-button">Logout</button>

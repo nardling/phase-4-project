@@ -49,6 +49,12 @@ class PostsController < ApplicationController
     render json: posts, status: :ok, include: [:child_posts, :user]
     end
 
+    def update
+        post = Post.find(params[:id])
+        post.update!(new_post_params)
+        render json: post, status: :ok, include: [:child_posts, :user]
+    end
+
 
     private
     def new_post_params

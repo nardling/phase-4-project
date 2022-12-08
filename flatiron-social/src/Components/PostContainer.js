@@ -1,8 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
+import EditPost from './EditPost'
 
 function PostContainer(props) {
     const {post, currentUser, posts, setPosts, deletePost} = props
+    const [isEditing, setIsEditing] = useState(false)
+
+    function handleEdit() {
+        setIsEditing(!isEditing)
+    }
+    
+
 
 //   // DELETE POSTS
     const deleteClick = () => {
@@ -20,9 +28,9 @@ function PostContainer(props) {
 // }
 
 
-function getCurrentPost(e){
-    console.log(post.user.handle)
-}
+// function getCurrentPost(e){
+//     console.log(post.user.handle)
+// }
 
 
 
@@ -31,9 +39,11 @@ return (
             {/* <h4>{currentUser.handle} says:   </h4>
             <p className='feed-content'>{post.text}</p>
            */}
+        {isEditing? (<EditPost post={post} isEditing = {isEditing} setIsEditing={setIsEditing} setPosts={setPosts} posts={posts}/> 
+        
+        ) : (    
+        
         <Comment.Group>
-      
-
         <Comment>
         {/* <Comment.Avatar src='/images/avatar/small/matt.jpg' /> */}
         <Comment.Content>
@@ -43,13 +53,15 @@ return (
             </Comment.Metadata>
             <Comment.Text>{post.text}</Comment.Text>
             <Comment.Actions>
-            <button onClick={getCurrentPost}>Reply</button>
+            <button>Reply</button>
             <button onClick={deleteClick}>Delete</button>
+            <button onClick={handleEdit}> Edit </button>
             {post.child_posts.length > 0 ? <button>Show Comments</button> : <></>}
             </Comment.Actions>
         </Comment.Content>
         </Comment>
         </Comment.Group>
+    )}
         </div>
 )
 }
