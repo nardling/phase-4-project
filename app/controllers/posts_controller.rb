@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     def getLatest
         uf = UserFollower.where(followerId: params[:id]).pluck(:user_id)
         uf.append(params[:id])
-        posts = Post.where(user_id: uf, parentPostId: 0).order(:created_at)
+        posts = Post.where(user_id: uf, parentPostId: 0).order(created_at: :desc)
         render json: posts, include: [:child_posts, :user]
     end
 

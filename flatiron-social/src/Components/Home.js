@@ -71,6 +71,7 @@ function Home(props) {
         // console.log(newPost)
         createNewPost(newPost)
         setNewPostData("")
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     function createNewPost(newPost){
@@ -100,7 +101,9 @@ function Home(props) {
         setPosts(updatedPostList)
     }
 
-    const renderPosts = posts.map(post => <PostContainer 
+    const renderPosts = posts.map(post => 
+    <div className="posts-container">
+    <PostContainer 
         key={post.id} 
         post={post} 
         posts={posts} 
@@ -108,27 +111,36 @@ function Home(props) {
         deletePost={deletePost} 
         currentUser = {currentUser}
         messageCallBack={setStatus}
-        />)
+        />
+        </div>)
 
   
 
     return <div>
         {/* CREATING POSTS */}
-        <h1 className="login-header">Welcome To Reactr {currentUser.name}</h1>
-        <form  className="create-post-form"  onSubmit={handlePostSubmit}>
-        <label>What's on your mind?</label>
-            <TextArea onChange={postDataChange} placeholder="What's on your mind?" />
-                    <button>Submit</button>
+        <h1 className="login-header">Welcome To Reactr,  {currentUser.name}</h1>
+        <div className="input-field-container">
+        <form  onSubmit={handlePostSubmit}>
+            <label>What's on your mind?</label>
+            <input type="text" onChange={postDataChange} placeholder="Enter your post here..." />
+            <button className="submit-button" type="submit">Submit</button>
+            {/* <TextArea onChange={postDataChange} placeholder="What's on your mind?" />
+                    <button>Submit</button> */}
         </form>
 
-        <form onSubmit={searchForUserPosts}>
+        </div>
+        <form className="search-bar" onSubmit={searchForUserPosts}>
             <label>Search For User Posts (by handle): </label>
             <input type="text" onChange={userNameChange}></input>
-            <button>Search</button>
+            <button className="search-bar-button">Search</button>
         </form>
         <text>{statusMessage}</text>
+
+
+        {/* Searching for user posts */}
         {/* <Link onClick={handleLogout} to="/">Click here to go to home</Link> */}
-        <button onClick={handleLogout} className="logout-button">Logout</button>
+        <button onClick={handleLogout} className="button-30">Logout</button>
+
         {renderPosts}
         </div>
 }
