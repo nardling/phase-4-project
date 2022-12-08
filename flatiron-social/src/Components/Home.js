@@ -75,10 +75,10 @@ function postDataChange(e){
 
 
     // DELETE POSTS
-    const deletePost = (post) => {
+    const deletePost = (postId) => {
         // debugger
-        const updatedPostList = posts.filter(originalPostList => originalPostList !== post)
-        setPosts([...posts, updatedPostList, currentUser])
+        const updatedPostList = posts.filter(originalPostList => originalPostList.id !== postId)
+        setPosts(updatedPostList)
     }
 
     //   // DELETE POSTS

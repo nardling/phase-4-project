@@ -12,10 +12,11 @@ function handlePostChange(e){
 function postChangeSubmit(e) {
     e.preventDefault()
     const updatedPost = {
-        // id: post.id,
-        user_id: post.user.id,
-        text: post.text
+        id: post.id,
+        // user_id: post.user.id,
+        text: postChange
     }
+    console.log(updatedPost)
     addUpdatedPost(updatedPost)
 }
 
@@ -30,7 +31,8 @@ function postChangeSubmit(e) {
             body: JSON.stringify(updatedPost)
         })
         .then(r => r.json())
-        .then(updatedPostData => {setPosts([...posts, updatedPostData])})
+        .then(updatedPostData => setPosts(posts.map(post => post.id == updatedPostData.id ? updatedPostData : post )))
+        // if it exists, replace it
     }
 
 
