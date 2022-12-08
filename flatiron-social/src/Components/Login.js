@@ -82,12 +82,10 @@ function Login(props) {
     }
 
     function setActionLogin() {
-        console.log("SETTING LOGIN")
         setAction("login")
     }
 
     function setActionCreate() {
-        console.log("SETTING CREATE")
         setAction("create")
     }
 

@@ -3,37 +3,44 @@ import { Button, Comment, Form, Header } from 'semantic-ui-react'
 import EditPost from './EditPost'
 
 function PostContainer(props) {
-    const {post, currentUser, posts, setPosts, deletePost} = props
+    const {post, currentUser, posts, setPosts, deletePost, messageCallBack} = props
     const [isEditing, setIsEditing] = useState(false)
+
+    const addFollowerUrl = "http://localhost:3000/followUser/"
 
     function handleEdit() {
         setIsEditing(!isEditing)
     }
     
-
-
-//   // DELETE POSTS
+    // DELETE POSTS
     const deleteClick = () => {
-    fetch(`http://localhost:3000/posts/${post.id}`, {
-        method: "DELETE"
-    })
-    // debugger
-    deletePost(post.id)
-}
+        fetch(`http://localhost:3000/posts/${post.id}`, {
+            method: "DELETE"
+        })
+        // debugger
+        deletePost(post.id)
+    }
 
-// const deletePost = (postID) => {
-//     // debugger
-//     const updatedPostList = posts.filter(originalPostList => originalPostList.id !== postID)
-//     setPosts([...posts, updatedPostList])
-// }
-
-
-// function getCurrentPost(e){
-//     console.log(post.user.handle)
-// }
-
-
-
+    function md(e){
+        console.log(e)
+        if (e.button == 2) {
+            e.preventDefault()
+            const followerRelation = {followerId: currentUser.id, userId: post.user.id}
+            fetch(addFollowerUrl,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-type": 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(followerRelation),
+                })
+            .then(res => {if (res.status == 201) {
+                messageCallBack("Now Following " + post.user.handle)
+            }})
+            return true
+        }
+    }
 return (
     <div className='feed'>
             {/* <h4>{currentUser.handle} says:   </h4>
@@ -47,16 +54,16 @@ return (
         <Comment>
         {/* <Comment.Avatar src='/images/avatar/small/matt.jpg' /> */}
         <Comment.Content>
-            <Comment.Author as='a'>{post.user.handle}</Comment.Author>
+            <Comment.Author onContextMenu={(e)=>{e.preventDefault(); return false;}} onMouseDown={md} as='a'>{post.user.handle}</Comment.Author>
             <Comment.Metadata>
-            <div>Today at 5:42PM</div>
+            <div>{post.created_at}</div>
             </Comment.Metadata>
             <Comment.Text>{post.text}</Comment.Text>
             <Comment.Actions>
             <button>Reply</button>
             <button onClick={deleteClick}>Delete</button>
             <button onClick={handleEdit}> Edit </button>
-            {post.child_posts.length > 0 ? <button>Show Comments</button> : <></>}
+            {(post.child_posts && post.child_posts.length > 0) ? <button>Show Comments</button> : <></>}
             </Comment.Actions>
         </Comment.Content>
         </Comment>

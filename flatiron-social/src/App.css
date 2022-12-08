@@ -176,3 +176,8 @@
 .create-post-form input[type="submit"]:hover {
   background-color: cyan;
 }
+
+.scrollBox {
+  height: 60vh;
+  overflow: auto;
+}

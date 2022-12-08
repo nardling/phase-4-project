@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get '/getComments/:id', to: 'posts#getComments'
 
   post '/createPost/', to: 'posts#createNew'
-
+  get '/userPosts/:handle', to: 'posts#getUserPosts'
+  post '/followUser', to: 'user_followers#addFollower'
   post '/createComment', to: 'posts#createComment'
 
   post '/login', to: 'sessions#create'

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
     def getLatest
-        uf = UserFollower.where(user_id: params[:id]).pluck(:followerId)
+        uf = UserFollower.where(followerId: params[:id]).pluck(:user_id)
         uf.append(params[:id])
         posts = Post.where(user_id: uf, parentPostId: 0).order(:created_at)
         render json: posts, include: [:child_posts, :user]
@@ -15,6 +15,17 @@ class PostsController < ApplicationController
     def getComments
         posts = Post.where(parentPostId: params[:id]).order(:created_at)
         render json: posts, include: :user
+    end
+
+    def getUserPosts
+        u = User.where(handle: params[:handle])
+        pp u
+        if (u)
+            posts = Post.where(user_id: u.ids, parentPostId: 0).order(:created_at)
+            render json: posts, include: [:user]
+        else
+            render json: {}, status: 404
+        end
     end
     
     # def show
