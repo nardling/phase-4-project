@@ -37,6 +37,18 @@ class PostsController < ApplicationController
         render json: post, status: :ok, include: [:child_posts, :user]
     end
 
+    def destroy
+        post = Post.find(params[:id])
+        post.destroy 
+        render json: {}, status: :ok, include: [:child_posts, :user]
+        head :no_content
+    end
+
+    def index
+    posts = Post.all 
+    render json: posts, status: :ok, include: [:child_posts, :user]
+    end
+
 
     private
     def new_post_params

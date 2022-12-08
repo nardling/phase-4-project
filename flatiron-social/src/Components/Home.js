@@ -6,7 +6,7 @@ import { Form, TextArea } from 'semantic-ui-react'
 
 
 const postUrl = 'http://localhost:3000/latest/'
-
+// const deleteUrl = 'http://localhost:3000/posts/'
 
 
 
@@ -70,15 +70,39 @@ function postDataChange(e){
             body: JSON.stringify(newPost),
         })
         .then(res => res.json())
-        .then(postData => {
-            // debugger
-            setPosts([...posts, postData])})
+        .then(postData => {setPosts([...posts, postData])})
     }
 
 
-    // console.log(currentUser)
-    const renderPosts = posts.map(post => <PostContainer key={post.id} post={post} />)
+    // DELETE POSTS
+    const deletePost = (post) => {
+        // debugger
+        const updatedPostList = posts.filter(originalPostList => originalPostList !== post)
+        setPosts([...posts, updatedPostList, currentUser])
+    }
 
+    //   // DELETE POSTS
+    //     const deleteClick = () => {
+    //     fetch(`http://localhost:3000/posts/${post.id}`, {
+    //         method: "DELETE"
+    //     })
+    //     deletePost(post.id)
+    //     debugger
+    // }
+
+
+
+    const renderPosts = posts.map(post => <PostContainer 
+        key={post.id} 
+        post={post} 
+        posts={posts} 
+        setPosts={setPosts} 
+        deletePost={deletePost} 
+        currentUser = {currentUser}
+
+        />)
+
+  
 
     return <div>
         {/* CREATING POSTS */}
@@ -89,7 +113,7 @@ function postDataChange(e){
                     <button>Submit</button>
     </form>
 
-        {/* <Link onClick={handleLogout} to="/">Click here to go to home</Link> */}
+
         <button onClick={handleLogout} className="logout-button">Logout</button>
         {renderPosts}
         </div>
