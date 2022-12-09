@@ -480,9 +480,7 @@
 
 
 
-.feed-buttons {
-  
-}
+
 
 
 .delete-button {
@@ -740,4 +738,78 @@ align-items: center;
       font-family: 'Work Sans', sans-serif;
       font-weight: 900;
       font-size: 64px;
+  }
+
+  .edit-form-container {
+    width: 370px;
+    margin: auto;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    
+    opacity: 1;
+    background: linear-gradient(-45deg, grey, rgb(0, 157, 255), white);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100px;
+    font-family: Rockwell;
+  }
+
+
+  .edit-form-container input[type=text] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .submit-edit-button {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 30px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+  
+  }
+  
+  .submit-edit-button:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .submit-edit-button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .submit-edit-button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
   }
