@@ -25,7 +25,8 @@ UserFollower.create(user_id: admin2.id, followerId: admin.id)
 UserFollower.create(user_id: admin.id, followerId: admin3.id)
 UserFollower.create(user_id: admin2.id, followerId: joe.id)
 UserFollower.create(user_id: admin.id, followerId: joe.id)
-UserFollower.create(user_id: tim.id, followerId: joe.id)
+# UserFollower.create(user_id: tim.id, followerId: joe.id)
+UserFollower.create(user_id: admin2.id, followerId: tim.id)
 
 Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text: "Sometimes it feels like no matter how hard I try, I can't please everyone.")
 Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text: "The pressure to please everyone is overwhelming at times.")
@@ -52,6 +53,9 @@ Post.create(parentPostId: p1.id, rootPostId: p1.id, user_id: tim.id, text:"Oh, n
 
 
 # posts for timothy appleton
+Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: "Please see my official apology: I'm sorry for supporting Kanye in the past. I was wrong to overlook his hurtful and offensive words and actions. I take full responsibility for my actions and I will do better in the future. I'm truly sorry to anyone I may have hurt by supporting him. " )
+Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: "Hol'up, I'm starting to think Kanye West might be a horrible person..." )
+Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: 'I love the album Graduation, Ye is a visionary! #golddigger' )
 Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: 'Excited to be leading the amazing team at Apple!' )
 Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: "Just announced our latest product line at the annual conference. Can't wait for everyone to see it!")
 Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: "Just met with some of the brightest minds in the tech industry at our headquarters in Cupertino.")
