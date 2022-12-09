@@ -143,7 +143,7 @@ function Home(props) {
         <form className="search-bar" onSubmit={searchForUserPosts}>
             <label>Search For User Posts (by handle): </label>
             <input type="text" onChange={userNameChange}></input>
-            <button className="search-bar-button">Search</button>
+            <button className="search-button">Search</button>
         </form>
         <text>{statusMessage}</text>
 

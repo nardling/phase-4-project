@@ -16867,3 +16867,344 @@ Processing by PostsController#getLatest as */*
 Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 1.2ms | Allocations: 13047)
 
 
+Started POST "/login" for ::1 at 2022-12-08 18:55:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Joe", "password"=>"[FILTERED]", "session"=>{"name"=>"Joe", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Joe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 254ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 23786)
+
+
+Started GET "/latest/4" for ::1 at 2022-12-08 18:55:48 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUserFollower Pluck (0.1ms)[0m  [1m[34mSELECT "user_followers"."user_id" FROM "user_followers" WHERE "user_followers"."followerId" = ?[0m  [["followerId", 4]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" DESC[0m  [["user_id", 2], ["user_id", 1], ["user_id", 4], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 45ms (Views: 35.4ms | ActiveRecord: 2.1ms | Allocations: 38787)
+
+
+Started GET "/postDetail/464" for ::1 at 2022-12-08 18:55:51 -0500
+Processing by PostsController#showDetail as */*
+  Parameters: {"id"=>"464"}
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (rootPostId = '464' OR id = '464') ORDER BY "posts"."created_at" ASC[0m
+  ↳ app/controllers/posts_controller.rb:12:in `showDetail'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `showDetail'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `showDetail'
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 1.9ms | Allocations: 2702)
+
+
+Started PATCH "/posts/464" for ::1 at 2022-12-08 18:56:04 -0500
+Processing by PostsController#update as JSON
+  Parameters: {"id"=>"464", "text"=>"!!!", "post"=>{"id"=>"464", "text"=>"!!!"}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 464], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `update'
+[31mUnpermitted parameter: :id. Context: { controller: PostsController, action: update, request: #<ActionDispatch::Request:0x0000000116a69958>, params: {"id"=>"464", "text"=>"!!!", "controller"=>"posts", "action"=>"update", "post"=>{"id"=>"464", "text"=>"!!!"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:65:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:65:in `update'
+  [1m[36mPost Update (3.0ms)[0m  [1m[33mUPDATE "posts" SET "text" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["text", "!!!"], ["updated_at", "2022-12-08 23:56:04.654033"], ["id", 464]]
+  ↳ app/controllers/posts_controller.rb:65:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:65:in `update'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:66:in `update'
+Completed 200 OK in 39ms (Views: 8.8ms | ActiveRecord: 4.7ms | Allocations: 5578)
+
+
+Started GET "/postDetail/464" for ::1 at 2022-12-08 18:56:06 -0500
+Processing by PostsController#showDetail as */*
+  Parameters: {"id"=>"464"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (rootPostId = '464' OR id = '464') ORDER BY "posts"."created_at" ASC[0m
+  ↳ app/controllers/posts_controller.rb:12:in `showDetail'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `showDetail'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `showDetail'
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 2690)
+
+
+Started PATCH "/posts/464" for ::1 at 2022-12-08 18:56:09 -0500
+Processing by PostsController#update as JSON
+  Parameters: {"id"=>"464", "text"=>"!!!", "post"=>{"id"=>"464", "text"=>"!!!"}}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 464], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `update'
+[31mUnpermitted parameter: :id. Context: { controller: PostsController, action: update, request: #<ActionDispatch::Request:0x0000000120b537d8>, params: {"id"=>"464", "text"=>"!!!", "controller"=>"posts", "action"=>"update", "post"=>{"id"=>"464", "text"=>"!!!"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:65:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:65:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:65:in `update'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:66:in `update'
+Completed 200 OK in 17ms (Views: 6.7ms | ActiveRecord: 0.6ms | Allocations: 3691)
+
+
+Started DELETE "/posts/464" for ::1 at 2022-12-08 18:56:11 -0500
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"464"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 464], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:53:in `destroy'
+  [1m[36mPost Destroy (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 464]]
+  ↳ app/controllers/posts_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:53:in `destroy'
+Completed 204 No Content in 6ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 1919)
+
+
+Started POST "/login" for ::1 at 2022-12-08 18:56:19 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Joe", "password"=>"[FILTERED]", "session"=>{"name"=>"Joe", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Joe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 268ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 676)
+
+
+Started GET "/latest/4" for ::1 at 2022-12-08 18:56:19 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUserFollower Pluck (0.1ms)[0m  [1m[34mSELECT "user_followers"."user_id" FROM "user_followers" WHERE "user_followers"."followerId" = ?[0m  [["followerId", 4]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" DESC[0m  [["user_id", 2], ["user_id", 1], ["user_id", 4], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms | Allocations: 11265)
+
+
+Started DELETE "/posts/469" for ::1 at 2022-12-08 19:00:22 -0500
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"469"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 469], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:53:in `destroy'
+  [1m[36mPost Destroy (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 469]]
+  ↳ app/controllers/posts_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:53:in `destroy'
+Completed 204 No Content in 9ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 1897)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-08 19:00:31 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 56)
+
+
+Started POST "/login" for ::1 at 2022-12-08 19:18:04 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Joe", "password"=>"[FILTERED]", "session"=>{"name"=>"Joe", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Joe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 279ms (Views: 5.4ms | ActiveRecord: 3.2ms | Allocations: 820)
+
+
+Started GET "/latest/4" for ::1 at 2022-12-08 19:18:04 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUserFollower Pluck (0.1ms)[0m  [1m[34mSELECT "user_followers"."user_id" FROM "user_followers" WHERE "user_followers"."followerId" = ?[0m  [["followerId", 4]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" DESC[0m  [["user_id", 2], ["user_id", 1], ["user_id", 4], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 23ms (Views: 16.1ms | ActiveRecord: 2.9ms | Allocations: 9694)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-08 19:18:08 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 56)
+
+
+Started POST "/login" for ::1 at 2022-12-08 19:22:17 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Joe", "password"=>"[FILTERED]", "session"=>{"name"=>"Joe", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Joe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 276ms (Views: 1.9ms | ActiveRecord: 3.2ms | Allocations: 678)
+
+
+Started GET "/latest/4" for ::1 at 2022-12-08 19:22:18 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUserFollower Pluck (0.1ms)[0m  [1m[34mSELECT "user_followers"."user_id" FROM "user_followers" WHERE "user_followers"."followerId" = ?[0m  [["followerId", 4]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" DESC[0m  [["user_id", 2], ["user_id", 1], ["user_id", 4], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 20ms (Views: 12.2ms | ActiveRecord: 4.3ms | Allocations: 9619)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-08 19:34:22 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 3ms (Allocations: 56)
+
+
+Started POST "/login" for ::1 at 2022-12-08 19:43:16 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"name"=>"Joe", "password"=>"[FILTERED]", "session"=>{"name"=>"Joe", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Joe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 266ms (Views: 1.3ms | ActiveRecord: 3.5ms | Allocations: 825)
+
+
+Started GET "/latest/4" for ::1 at 2022-12-08 19:43:16 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUserFollower Pluck (0.2ms)[0m  [1m[34mSELECT "user_followers"."user_id" FROM "user_followers" WHERE "user_followers"."followerId" = ?[0m  [["followerId", 4]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" DESC[0m  [["user_id", 2], ["user_id", 1], ["user_id", 4], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 27ms (Views: 17.6ms | ActiveRecord: 2.3ms | Allocations: 9693)
+
+
+Started GET "/latest/4" for ::1 at 2022-12-08 19:47:19 -0500
+Processing by PostsController#getLatest as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUserFollower Pluck (0.2ms)[0m  [1m[34mSELECT "user_followers"."user_id" FROM "user_followers" WHERE "user_followers"."followerId" = ?[0m  [["followerId", 4]]
+  ↳ app/controllers/posts_controller.rb:4:in `getLatest'
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (?, ?, ?) AND "posts"."parentPostId" = ? ORDER BY "posts"."created_at" DESC[0m  [["user_id", 2], ["user_id", 1], ["user_id", 4], ["parentPostId", "0"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."rootPostId" = ?[0m  [["rootPostId", "[FILTERED]"]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `getLatest'
+Completed 200 OK in 31ms (Views: 24.7ms | ActiveRecord: 1.9ms | Allocations: 9619)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-08 19:47:53 -0500
+Processing by SessionsController#delete as */*
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 56)
+
+
