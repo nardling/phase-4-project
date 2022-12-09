@@ -90,7 +90,7 @@ function Login(props) {
     }
 
     return <div>
-        <h1 className="login-header">Welcome to Reactr</h1>
+        <h1 className="fancy">Welcome to Reactr</h1>
 
         <div class="tab">
             <button onClick={setActionLogin}>Login</button>
@@ -124,7 +124,7 @@ function Login(props) {
                 <input type="submit" value="Create"/>
                 </>
             :
-            <input type="submit" value="Login"/>}
+            <input className="login-button" type="submit" value="Login"/>}
         </form>
         </div>
 }
