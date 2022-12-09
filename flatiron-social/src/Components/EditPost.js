@@ -38,8 +38,8 @@ function postChangeSubmit(e) {
 
 return (
 
-
-    <form  className="create-post-form"  onSubmit={postChangeSubmit}>
+    <div className='edit-form-container'>
+    <form   onSubmit={postChangeSubmit}>
         <input 
         type="text"
         value={postChange}
@@ -47,8 +47,9 @@ return (
         >
 
         </input>
-                <button>Submit</button>
+                <button className='submit-edit-button'>Submit</button>
     </form>
+    </div>
 )
 }
 
