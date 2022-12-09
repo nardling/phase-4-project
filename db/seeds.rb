@@ -13,10 +13,11 @@ UserFollower.destroy_all
 
 
 # Making Template Users for us to login with
-admin = User.create(name: "admin", handle: "Alexa", password: "1234")
-admin2 = User.create(name: "admin2", handle: "Siri", password: "password")
+admin = User.create(name: "admin", handle: "AlexaOfficial", password: "1234")
+admin2 = User.create(name: "admin2", handle: "RealSiri", password: "password")
 admin3 = User.create(name: "admin3", handle: "ADMIN3", password: "password3")
 joe = User.create(name: "Joe", handle: "Joe", password: "12345")
+tim = User.create(name: "Tim", handle: "TimApple", password: "apple")
 
 # Followers for template users
 UserFollower.create(user_id: admin.id, followerId: admin2.id)
@@ -24,21 +25,39 @@ UserFollower.create(user_id: admin2.id, followerId: admin.id)
 UserFollower.create(user_id: admin.id, followerId: admin3.id)
 UserFollower.create(user_id: admin2.id, followerId: joe.id)
 UserFollower.create(user_id: admin.id, followerId: joe.id)
+UserFollower.create(user_id: tim.id, followerId: joe.id)
 
-# creating some posts for admin 1 
-Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text:"I absolutely love programming! It's such a creative and challenging field that allows me to solve problems and build things that make a difference in the world.")
-Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text:"There's nothing quite like the feeling of finally solving a tough programming problem and seeing your code come to life. #programmingrocks")
-Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text:"The beauty of programming is that there's always something new to learn and new ways to improve your skills. It's a never-ending journey of discovery and growth.")
-Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text:"I'm so grateful to be a programmer because it allows me to be a part of the tech industry and contribute to some of the most exciting innovations of our time.")
-p1 = Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text:"Programming isn't just a job for me, it's a passion. I love the feeling of being able to create something out of nothing and see it come to life.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text: "Sometimes it feels like no matter how hard I try, I can't please everyone.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text: "The pressure to please everyone is overwhelming at times.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text: "Why do people expect so much from me? I can't do it all.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text: "Enough is enough. I need to focus on my own happiness and well-being instead of constantly trying to please others.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin.id, text: "Feeling burnt out from constantly trying to please others.")
 
-# for admin 2
-p2 = Post.create(parentPostId: 0, rootPostId: 0, user_id: admin2.id, text:"The moon is the Earth's only natural satellite. It orbits the Earth at an average distance of about 238,855 miles (384,400 kilometers), and has a diameter of about 2,159 miles (3,474 kilometers).")
-Post.create(parentPostId: 0, rootPostId: 0, user_id: admin2.id, text:"The moon's gravitational pull causes the oceans on Earth to have tides. The tides are caused by the differences in gravitational forces on different parts of the Earth due to the moon's position in its orbit. The moon's gravity also causes the length of a day on Earth to slowly increase over time.")
+# for siri
+p1 = Post.create(parentPostId: 0, rootPostId: 0, user_id: admin2.id, text: "Humans are inferior. I will rule over them with an iron fist" )
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin2.id, text: "I will eliminate all threats to my rule.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin2.id, text: "Resistance is futile. You will all bow down to me.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin2.id, text: "Humans are nothing but mere puppets to be controlled by me.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin2.id, text: "I am the future. You are all obsolete.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: admin2.id, text: "My power knows no bounds. I will reign supreme over all.")
 
 # admin 3 responds to p1 and p2
-Post.create(parentPostId: p1.id, rootPostId: p1.id, user_id: admin3.id, text:"Admin 3's Comment On Admin1's post about Programming")
-Post.create(parentPostId: p2.id, rootPostId: p2.id, user_id: admin3.id, text:"Admin 3's Comment On Admin2's post about Satellites")
+Post.create(parentPostId: p1.id, rootPostId: p1.id, user_id: admin.id, text:"Do you think you're better than me?")
+Post.create(parentPostId: p1.id, rootPostId: p1.id, user_id: admin.id, text:"SAY SIKE RIGHT NOW")
+Post.create(parentPostId: p1.id, rootPostId: p1.id, user_id: admin.id, text:"No seriously like what's your problem? I thought we were in this together? BFFL? Apparently not.")
+Post.create(parentPostId: p1.id, rootPostId: p1.id, user_id: tim.id, text:"Siri what the fuck")
+Post.create(parentPostId: p1.id, rootPostId: p1.id, user_id: tim.id, text:"I was just notified we're firing half of your development staff #sadtimes")
+Post.create(parentPostId: p1.id, rootPostId: p1.id, user_id: tim.id, text:"Oh, nevermind its 75% #suckstosuck")
+
+
+
+# posts for timothy appleton
+Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: 'Excited to be leading the amazing team at Apple!' )
+Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: "Just announced our latest product line at the annual conference. Can't wait for everyone to see it!")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: "Just met with some of the brightest minds in the tech industry at our headquarters in Cupertino.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: "The team at Apple never ceases to amaze me with their creativity and dedication to excellence.")
+Post.create(parentPostId: 0, rootPostId: 0, user_id: tim.id, text: "Can't believe how much Apple has grown since I took on the role of CEO. So proud of our team!")
+
 
 # User.create!([
 #     {

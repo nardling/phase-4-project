@@ -25,4 +25,15 @@ class UsersController < ApplicationController
             end
         end
     end
+
+    # def create
+    # user = User.create!(user_params)
+    # render json: user, status: :created, except: :password_digest
+    # end
+
+    private
+
+    def user_params 
+        params.permit(:name, :handle, :password_digest)
+    end
 end
